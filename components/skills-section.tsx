@@ -4,9 +4,9 @@ import { TechStack } from "@/components/tech-stack"
 
 // Tech stack items with logos
 const techStackItems = [
-  { name: "React", logo: "/placeholder.svg?height=48&width=48" },
-  { name: "Next.js", logo: "/placeholder.svg?height=48&width=48" },
-  { name: "TypeScript", logo: "/placeholder.svg?height=48&width=48" },
+  { name: "React", logo: "/icons/react.png?height=48&width=48" },
+  { name: "Next.js", logo: "/icons/nextjs.png?height=48&width=48" },
+  { name: "TypeScript", logo: "/icons/typescript.png?height=48&width=48" },
   { name: "Tailwind CSS", logo: "/placeholder.svg?height=48&width=48" },
   { name: "Three.js", logo: "/placeholder.svg?height=48&width=48" },
   { name: "Node.js", logo: "/placeholder.svg?height=48&width=48" },
