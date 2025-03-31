@@ -1,7 +1,5 @@
-"use client"
-
+import React from "react"
 import { useInView } from "react-intersection-observer"
-import { useRef } from "react"
 
 interface TimelineItem {
   year: string
@@ -15,7 +13,7 @@ interface TimelineProps {
 }
 
 export function Timeline({ items }: TimelineProps) {
-  const refs = useRef<(HTMLElement | null)[]>([])
+  const refs = React.useRef<(HTMLElement | null)[]>([])
 
   return (
     <div className="relative">
@@ -60,4 +58,3 @@ export function Timeline({ items }: TimelineProps) {
     </div>
   )
 }
-

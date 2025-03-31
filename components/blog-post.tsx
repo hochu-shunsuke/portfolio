@@ -1,6 +1,4 @@
-"use client"
-
-import { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -12,7 +10,7 @@ interface BlogPostProps {
 }
 
 export function BlogPost({ title, excerpt, date, readTime }: BlogPostProps) {
-  const [isHovered, setIsHovered] = useState(false)
+  const [isHovered, setIsHovered] = React.useState(false)
 
   return (
     <Link href="#" className="block" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -35,4 +33,3 @@ export function BlogPost({ title, excerpt, date, readTime }: BlogPostProps) {
     </Link>
   )
 }
-
