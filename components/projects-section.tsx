@@ -8,9 +8,9 @@ export function ProjectsSection() {
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-12">
           <ProjectCard
-            title="3D Portfolio Visualizer"
+            title="天気情報アプリ"
             description="An immersive 3D web experience built with Three.js and React"
-            tags={["Three.js", "React", "WebGL"]}
+            tags={["Next.js", "supabase", "API", "Github Actions"]}
             imageUrl="/placeholder.svg?height=400&width=600"
           />
           <ProjectCard
@@ -25,6 +25,13 @@ export function ProjectsSection() {
             tags={["TypeScript", "D3.js", "API"]}
             imageUrl="/placeholder.svg?height=400&width=600"
           />
+          <ProjectCard
+            title="AI Dashboard"
+            description="Data visualization dashboard for AI analytics"
+            tags={["TypeScript", "D3.js", "API"]}
+            imageUrl="/placeholder.svg?height=400&width=600"
+          />
+          ここスクロール式に変更
         </div>
       </div>
     </section>

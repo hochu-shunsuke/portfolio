@@ -40,12 +40,11 @@ export function HeroSection() {
           className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl mb-6">
-            <span className="text-white">Hochu</span>
+            <span className="text-white">Hochu_Portfolio</span>
           </h1>
 
           <p className="max-w-[700px] mx-auto text-zinc-400 md:text-xl mb-8">
-            Creative developer crafting sophisticated digital experiences with a focus on clean design and technical
-            excellence.
+          Full-stack Developer, network engineer, AI enthusiast
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -7,6 +7,7 @@ export function ProfileCard() {
       <div className="p-6 md:p-8">
         {/* Social Icons */}
         <div className="flex space-x-3 mb-6">
+          <a href="https://github.com/itukahashinu" target="_blank" rel="noopener noreferrer">
           <Button
             variant="ghost"
             size="icon"
@@ -15,6 +16,7 @@ export function ProfileCard() {
             <Github className="h-4 w-4" />
             <span className="sr-only">GitHub</span>
           </Button>
+          </a>
           <Button
             variant="ghost"
             size="icon"
@@ -51,8 +53,9 @@ export function ProfileCard() {
 
         {/* Name and Title */}
         <div className="mb-6">
-          <h2 className="text-2xl font-bold mb-1">Hochu</h2>
-          <p className="text-zinc-400">Creative Developer & Digital Craftsman</p>
+          <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke / 宝中俊介</h2>
+          <p className="text-zinc-400">Full-stack Developer, network engineer, AI enthusiast</p>
+          <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
         </div>
 
         {/* Divider */}
@@ -130,7 +133,7 @@ export function ProfileCard() {
             {/* Location & Availability */}
             <div className="mt-auto pt-4">
               <div className="bg-zinc-800 rounded-lg p-3 text-sm">
-                <p className="text-zinc-300 font-medium">Tokyo, Japan</p>
+                <p className="text-zinc-300 font-medium">Nagoya, Japan</p>
                 <p className="text-zinc-400 text-xs mt-1">Available for freelance projects and collaborations</p>
               </div>
             </div>
