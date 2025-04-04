@@ -34,7 +34,7 @@ export function ContactSection() {
                 <Twitter className="h-4 w-4" />
                 <span className="sr-only">Twitter</span>
               </Button>
-              <a href="https://github.com/itukahashinu" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/hochu-shunsuke" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="icon"

@@ -7,7 +7,7 @@ export function ProfileCard() {
       <div className="p-6 md:p-8">
         {/* Social Icons */}
         <div className="flex space-x-3 mb-6">
-          <a href="https://github.com/itukahashinu" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/hochu-shunsuke" target="_blank" rel="noopener noreferrer">
           <Button
             variant="ghost"
             size="icon"
@@ -41,6 +41,7 @@ export function ProfileCard() {
             <Mail className="h-4 w-4" />
             <span className="sr-only">Email</span>
           </Button>
+          <a href="https://hochu-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
           <Button
             variant="ghost"
             size="icon"
@@ -49,6 +50,7 @@ export function ProfileCard() {
             <Globe className="h-4 w-4" />
             <span className="sr-only">Website</span>
           </Button>
+          </a>
         </div>
 
         {/* Name and Title */}
