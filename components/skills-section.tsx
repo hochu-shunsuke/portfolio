@@ -13,6 +13,8 @@ const techStackItems = [
   { name: "Python", logo: "/icons/python.svg?height=48&width=48" },
   { name: "AWS", logo: "/icons/aws.png?height=48&width=48" },
   { name: "Django", logo: "/icons/django.png?height=48&width=48" },
+  { name: "Vercel", logo: "/icons/vercel.png?height=48&width=48" },
+  { name: "Vue.js", logo: "/icons/vuejs.png?height=48&width=48" },
 ]
 
 export function SkillsSection() {
