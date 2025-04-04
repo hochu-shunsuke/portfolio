@@ -50,8 +50,8 @@ export function ProjectsSection() {
                 title="天気情報アプリ"
                 description="リアルタイム天気情報を提供するアプリ。位置情報を活用して正確な予報を表示"
                 tags={["Next.js", "OpenWeather API", "位置情報", "Github Actions"]}
-                imageUrl="/placeholder.svg?height=200&width=300"
-                link="/projects/weather-app"
+                imageUrl="/images/hochu-weather.png"
+                link="https://hochu-weather.vercel.app"
               />
             </div>
             <div className="w-[300px] md:w-[350px] flex-shrink-0 snap-start">
