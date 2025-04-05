@@ -2,8 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ScrollButton } from "@/components/ui/scroll-button"
 
 interface TechItem {
   name: string
@@ -50,17 +49,7 @@ export function TechStack({ items }: TechStackProps) {
 
   return (
     <div className="relative w-full">
-      {showLeftArrow && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/80 border-zinc-800 text-white hover:bg-zinc-900 hover:text-white"
-          onClick={() => scroll("left")}
-        >
-          <ChevronLeft className="h-4 w-4" />
-          <span className="sr-only">Scroll left</span>
-        </Button>
-      )}
+      <ScrollButton direction="left" onClick={() => scroll("left")} show={showLeftArrow} />
 
       <div
         ref={scrollRef}
@@ -81,18 +70,7 @@ export function TechStack({ items }: TechStackProps) {
         ))}
       </div>
 
-      {showRightArrow && (
-        <Button
-          variant="outline"
-          size="icon"
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/80 border-zinc-800 text-white hover:bg-zinc-900 hover:text-white"
-          onClick={() => scroll("right")}
-        >
-          <ChevronRight className="h-4 w-4" />
-          <span className="sr-only">Scroll right</span>
-        </Button>
-      )}
+      <ScrollButton direction="right" onClick={() => scroll("right")} show={showRightArrow} />
     </div>
   )
 }
-

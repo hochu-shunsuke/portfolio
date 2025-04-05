@@ -2,21 +2,39 @@
 
 import { SectionHeading } from "@/components/section-heading"
 import { ProjectCard } from "@/components/project-card"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef } from "react"
+import { ScrollButton } from "@/components/ui/scroll-button"
+import { useRef, useState, useEffect } from "react"
 
 export function ProjectsSection() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false)
+  const [showRightArrow, setShowRightArrow] = useState(true)
+
+  const checkArrows = () => {
+    if (scrollContainerRef.current) {
+      const { current } = scrollContainerRef
+      setShowLeftArrow(current.scrollLeft > 0)
+      setShowRightArrow(current.scrollLeft < current.scrollWidth - current.clientWidth - 10)
+    }
+  }
+
+  useEffect(() => {
+    checkArrows()
+    window.addEventListener("resize", checkArrows)
+    return () => window.removeEventListener("resize", checkArrows)
+  }, [])
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      setTimeout(checkArrows, 300)
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      setTimeout(checkArrows, 300)
     }
   };
 
@@ -26,14 +44,7 @@ export function ProjectsSection() {
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
         
         <div className="relative mt-12">
-          {/* スクロールボタン */}
-          <button 
-            onClick={scrollLeft} 
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-zinc-900/80 p-2 rounded-full shadow-md hover:bg-zinc-800 transition-all hidden md:flex items-center justify-center text-zinc-400 hover:text-white"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
+          <ScrollButton direction="left" onClick={scrollLeft} show={showLeftArrow} />
           
           {/* スクロール可能なコンテナ */}
           <div 
@@ -43,6 +54,7 @@ export function ProjectsSection() {
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
             }}
+            onScroll={checkArrows}
           >
             {/* 各カードに最大幅と高さの制限を適用 */}
             <div className="w-[300px] md:w-[350px] flex-shrink-0 snap-start">
@@ -101,14 +113,7 @@ export function ProjectsSection() {
             </div>
           </div>
           
-          {/* 右スクロールボタン */}
-          <button 
-            onClick={scrollRight} 
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-zinc-900/80 p-2 rounded-full shadow-md hover:bg-zinc-800 transition-all hidden md:flex items-center justify-center text-zinc-400 hover:text-white"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+          <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
           
           {/* スクロールインジケーター */}
           <div className="flex justify-center gap-2 mt-6">
