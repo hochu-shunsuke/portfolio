@@ -41,19 +41,23 @@ export function SkillsSection() {
 
         {/* Skill Bars */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-xl font-bold mb-8 text-center">Proficiency</h3>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-6">
-              <SkillBar name="Frontend Development" percentage={95} />
-              <SkillBar name="Backend Development" percentage={85} />
-              <SkillBar name="UI/UX Design" percentage={80} />
-              <SkillBar name="DevOps" percentage={75} />
-            </div>
-            <div className="space-y-6">
-              <SkillBar name="React/Next.js" percentage={98} />
-              <SkillBar name="TypeScript" percentage={90} />
-              <SkillBar name="Node.js" percentage={88} />
-              <SkillBar name="Three.js/WebGL" percentage={82} />
+          <div className="w-full bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/20">
+            <div className="p-6 md:p-8">
+              <h3 className="text-xl font-bold mb-8">Proficiency</h3>
+              <div className="grid gap-6 md:grid-cols-2">
+                <div className="space-y-6">
+                  <SkillBar name="Frontend Development" percentage={95} />
+                  <SkillBar name="Backend Development" percentage={85} />
+                  <SkillBar name="UI/UX Design" percentage={80} />
+                  <SkillBar name="DevOps" percentage={75} />
+                </div>
+                <div className="space-y-6">
+                  <SkillBar name="React/Next.js" percentage={98} />
+                  <SkillBar name="TypeScript" percentage={90} />
+                  <SkillBar name="Node.js" percentage={88} />
+                  <SkillBar name="Three.js/WebGL" percentage={82} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -61,4 +65,3 @@ export function SkillsSection() {
     </section>
   )
 }
-

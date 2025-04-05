@@ -62,7 +62,7 @@ export function AnimatedBackground() {
         {/* Second set of paths (reversed) */}
         <div className="absolute inset-0 pointer-events-none">
           <svg
-            className="w-full h-full text-white"
+            className="w-full h-full text-zinc-100"
             viewBox="-200 -200 1400 1400"
             preserveAspectRatio="xMidYMid slice"
             fill="none"
