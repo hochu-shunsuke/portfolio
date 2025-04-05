@@ -8,11 +8,14 @@ export function CodeSection() {
     <section id="code" className="py-16 md:py-28 bg-zinc-950">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Code" subtitle="Clean, efficient, and maintainable" />
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 mt-12">
-          <CodeSnippet
-            title="React Hook: useMousePosition"
-            language="typescript"
-            code={`import { useState, useEffect } from 'react';
+        <div className="mt-12 relative">
+          <div className="overflow-x-auto pb-4 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded [&::-webkit-scrollbar-track]:bg-zinc-800 [&::-webkit-scrollbar-thumb]:bg-zinc-700">
+            <div className="flex gap-6 min-w-max">
+              <div className="w-[600px] shrink-0">
+                <CodeSnippet
+                  title="React Hook: useMousePosition"
+                  language="typescript"
+                  code={`import { useState, useEffect } from 'react';
 
 export function useMousePosition() {
   const [position, setPosition] = useState({ 
@@ -37,11 +40,13 @@ export function useMousePosition() {
   
   return position;
 }`}
-          />
-          <CodeSnippet
-            title="Animation Utility"
-            language="typescript"
-            code={`import { useRef, useEffect, useState } from 'react';
+                />
+              </div>
+              <div className="w-[600px] shrink-0">
+                <CodeSnippet
+                  title="Animation Utility"
+                  language="typescript"
+                  code={`import { useRef, useEffect, useState } from 'react';
 
 export function useIntersectionObserver(
   options = { threshold: 0.1 }
@@ -67,11 +72,13 @@ export function useIntersectionObserver(
   
   return [ref, isVisible];
 }`}
-          />
-          <CodeSnippet
-            title="Animation Utility"
-            language="typescript"
-            code={`import { useRef, useEffect, useState } from 'react';
+                />
+              </div>
+              <div className="w-[600px] shrink-0">
+                <CodeSnippet
+                  title="Animation Utility"
+                  language="typescript"
+                  code={`import { useRef, useEffect, useState } from 'react';
 
 export function useIntersectionObserver(
   options = { threshold: 0.1 }
@@ -97,7 +104,10 @@ export function useIntersectionObserver(
   
   return [ref, isVisible];
 }`}
-          />
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

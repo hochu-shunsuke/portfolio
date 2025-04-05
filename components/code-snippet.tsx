@@ -50,10 +50,10 @@ export function CodeSnippet({ title, language, code }: CodeSnippetProps) {
           </Button>
         )}
       </div>
-      <div className="p-4 relative overflow-hidden font-mono text-sm text-zinc-300">
-        <div className="overflow-x-auto" style={{ maxWidth: '100%' }}>
-          <pre style={{ whiteSpace: 'pre', width: 'max-content' }}>{code}</pre>
-        </div>
+      <div className="relative">
+        <pre className="p-4 font-mono text-sm text-zinc-300 whitespace-pre-wrap break-all select-text">
+          <code>{code}</code>
+        </pre>
       </div>
     </div>
   )
