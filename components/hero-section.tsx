@@ -4,7 +4,6 @@ import type React from "react"
 import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -27,24 +26,6 @@ export function HeroSection() {
     }
   }
 
-  // Generate animated path data with improved visibility
-  const generatePaths = (position: number) => {
-    return Array.from({ length: 18 }, (_, i) => ({
-      id: i,
-      d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-        380 - i * 5 * position
-      } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-        152 - i * 5 * position
-      } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-        684 - i * 5 * position
-      } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-      width: 1 + i * 0.05, // Increased stroke width
-    }))
-  }
-
-  const pathsPositive = generatePaths(1)
-  const pathsNegative = generatePaths(-1)
-
   return (
     <section className="relative flex flex-col items-center justify-center overflow-hidden py-24 md:py-32 lg:py-40">
       <div className="absolute inset-0 z-0">
@@ -61,26 +42,6 @@ export function HeroSection() {
               preserveAspectRatio="xMidYMid slice"
               fill="none"
             >
-              {pathsPositive.map((path) => (
-                <motion.path
-                  key={`pos-${path.id}`}
-                  d={path.d}
-                  stroke="currentColor"
-                  strokeWidth={path.width}
-                  strokeOpacity={0.15 + path.id * 0.02} // Increased opacity
-                  initial={{ pathLength: 0.3, opacity: 0.6 }}
-                  animate={{
-                    pathLength: 1,
-                    opacity: [0.3, 0.6, 0.3], // More visible opacity values
-                    pathOffset: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 15 + Math.random() * 10, // Slightly faster animation
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                />
-              ))}
             </svg>
           </div>
 
@@ -92,26 +53,6 @@ export function HeroSection() {
               preserveAspectRatio="xMidYMid slice"
               fill="none"
             >
-              {pathsNegative.map((path) => (
-                <motion.path
-                  key={`neg-${path.id}`}
-                  d={path.d}
-                  stroke="currentColor"
-                  strokeWidth={path.width}
-                  strokeOpacity={0.15 + path.id * 0.02} // Increased opacity
-                  initial={{ pathLength: 0.3, opacity: 0.6 }}
-                  animate={{
-                    pathLength: 1,
-                    opacity: [0.3, 0.6, 0.3], // More visible opacity values
-                    pathOffset: [0, 1, 0],
-                  }}
-                  transition={{
-                    duration: 15 + Math.random() * 10, // Slightly faster animation
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "linear",
-                  }}
-                />
-              ))}
             </svg>
           </div>
         </div>
