@@ -33,6 +33,7 @@ export function ProfileCard() {
             <Linkedin className="h-4 w-4" />
             <span className="sr-only">LinkedIn</span>
           </Button>
+          <a href="mailto:hochu.shunsuke.dev@gmail.com" target="_blank" rel="noopener noreferrer">
           <Button
             variant="ghost"
             size="icon"
@@ -41,6 +42,7 @@ export function ProfileCard() {
             <Mail className="h-4 w-4" />
             <span className="sr-only">Email</span>
           </Button>
+          </a>
           <a href="https://hochu-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
           <Button
             variant="ghost"
@@ -73,8 +75,7 @@ export function ProfileCard() {
                 <h3 className="font-medium">Mission</h3>
               </div>
               <p className="text-sm text-zinc-400 pl-6">
-                To create digital experiences that blend technical excellence with intuitive design, making technology
-                more accessible and enjoyable for everyone.
+              I have a great goal of creating a communication infrastructure for all to live, and we are moving forward every day toward that goal. Everything is an experience, and we approach our work with sincerity.
               </p>
             </div>
 
@@ -85,8 +86,8 @@ export function ProfileCard() {
                 <h3 className="font-medium">Goals</h3>
               </div>
               <p className="text-sm text-zinc-400 pl-6">
-                Continuously expand my technical skills, contribute to open-source projects, and build solutions that
-                positively impact users' lives.
+              I aim to continuously advance my technical expertise and build systems that empower global connectivity.
+              Every project is a step toward open, accessible technology, and I work to ensure real impact through shared knowledge and thoughtful design.
               </p>
             </div>
 
@@ -97,10 +98,10 @@ export function ProfileCard() {
                 <h3 className="font-medium">Strengths</h3>
               </div>
               <ul className="text-sm text-zinc-400 pl-6 space-y-1">
-                <li>• Problem-solving with creative solutions</li>
-                <li>• Attention to detail in both code and design</li>
-                <li>• Quick adaptation to new technologies</li>
-                <li>• Effective communication of complex concepts</li>
+                <li>• Creative problem-solving with logic and curiosity</li>
+                <li>• Clean, scalable code with growing design precision</li>
+                <li>• Quick to learn and adapt as a full-stack developer</li>
+                <li>• Clear, empathetic communicator in AI and networking topics</li>
               </ul>
             </div>
           </div>
@@ -113,9 +114,9 @@ export function ProfileCard() {
                 <h3 className="font-medium">Areas for Growth</h3>
               </div>
               <ul className="text-sm text-zinc-400 pl-6 space-y-1">
-                <li>• Delegating tasks more effectively</li>
-                <li>• Balancing perfectionism with pragmatism</li>
-                <li>• Public speaking and presentations</li>
+                <li>• Learning to delegate more effectively within teams</li>
+                <li>• Balancing perfectionism with practical delivery</li>
+                <li>• Improving public speaking and presentation confidence</li>
               </ul>
             </div>
 
@@ -126,9 +127,9 @@ export function ProfileCard() {
                 <h3 className="font-medium">My Approach</h3>
               </div>
               <p className="text-sm text-zinc-400 pl-6">
-                I blend technical precision with creative design to build digital experiences that are both functional
-                and beautiful. My work is characterized by attention to detail, clean code, and intuitive user
-                interfaces.
+              I’m growing as a full-stack developer by combining technical depth with a design-first mindset.
+              I explore backend systems, network design, and AI-assisted development to build experiences that are both reliable and intuitive.
+              I value clarity, clean code, and open collaboration throughout the process.
               </p>
             </div>
 

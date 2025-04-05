@@ -48,8 +48,8 @@ export function ProjectsSection() {
             <div className="w-[300px] md:w-[350px] flex-shrink-0 snap-start">
               <ProjectCard
                 title="天気情報アプリ"
-                description="リアルタイム天気情報を提供するアプリ。位置情報を活用して正確な予報を表示"
-                tags={["Next.js", "OpenWeather API", "位置情報", "Github Actions"]}
+                description="リアルタイム天気情報を提供するアプリ。モダンな開発の練習。"
+                tags={["Next.js", "OpenWeather API", "supabase", "Github Actions"]}
                 imageUrl="/images/hochu-weather.png"
                 link="https://hochu-weather.vercel.app"
               />

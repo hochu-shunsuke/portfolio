@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Copy, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -12,11 +12,19 @@ interface CodeSnippetProps {
 
 export function CodeSnippet({ title, language, code }: CodeSnippetProps) {
   const [copied, setCopied] = useState(false)
+  const [isClient, setIsClient] = useState(false)
+
+  // クライアントサイドでのみ実行されるように確認
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    }
   }
 
   return (
@@ -30,20 +38,23 @@ export function CodeSnippet({ title, language, code }: CodeSnippetProps) {
           </div>
           <span className="text-sm font-medium text-zinc-400">{title}</span>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-8 w-8 text-zinc-500 hover:text-white hover:bg-zinc-800"
-          onClick={handleCopy}
-        >
-          {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-          <span className="sr-only">Copy code</span>
-        </Button>
+        {isClient && (
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 text-zinc-500 hover:text-white hover:bg-zinc-800"
+            onClick={handleCopy}
+          >
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+            <span className="sr-only">Copy code</span>
+          </Button>
+        )}
       </div>
-      <div className="p-4 overflow-x-auto font-mono text-sm text-zinc-300">
-        <pre className="whitespace-pre">{code}</pre>
+      <div className="p-4 relative overflow-hidden font-mono text-sm text-zinc-300">
+        <div className="overflow-x-auto" style={{ maxWidth: '100%' }}>
+          <pre style={{ whiteSpace: 'pre', width: 'max-content' }}>{code}</pre>
+        </div>
       </div>
     </div>
   )
 }
-
