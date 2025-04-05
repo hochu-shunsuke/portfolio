@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/section-heading"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-16 md:py-28 bg-zinc-950">
+    <section id="contact" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Contact" subtitle="Get in touch for collaborations" />
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 mt-12">

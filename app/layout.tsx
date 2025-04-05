@@ -1,5 +1,6 @@
 import "./globals.css"
 import { Providers } from "./providers"
+import { AnimatedBackground } from "@/components/animated-background"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AnimatedBackground />
+          {children}
+        </Providers>
       </body>
     </html>
   )

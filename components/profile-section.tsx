@@ -3,7 +3,7 @@ import { ProfileCard } from "@/components/profile-card"
 
 export function ProfileSection() {
   return (
-    <section id="profile" className="py-16 md:py-28 bg-zinc-950">
+    <section id="profile" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Profile" subtitle="About me and my approach" />
 

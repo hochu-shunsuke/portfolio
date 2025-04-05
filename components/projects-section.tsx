@@ -39,7 +39,7 @@ export function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-16 md:py-28 bg-zinc-950">
+    <section id="projects" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
         

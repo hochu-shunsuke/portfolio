@@ -30,7 +30,7 @@ export function HeroSection() {
     <section className="relative flex flex-col items-center justify-center overflow-hidden py-24 md:py-32 lg:py-40">
       <div className="absolute inset-0 z-0">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-zinc-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-b"></div>
 
         {/* Animated background paths - increased visibility */}
         <div className="absolute inset-0 z-[1]">
@@ -91,8 +91,6 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent z-[2]"></div>
     </section>
   )
 }

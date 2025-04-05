@@ -24,7 +24,7 @@ export function AnimatedBackground() {
   return (
     <div className="contents">
       {/* Base black background - lowest layer */}
-      <div className="fixed inset-0 w-screen h-screen bg-black" style={{ zIndex: -10 }} />
+      <div className="fixed inset-0 w-screen h-screen" style={{ zIndex: -10 }} />
 
       {/* Animation layer */}
       <div className="fixed inset-0 w-screen h-screen" style={{ zIndex: -8 }}>
@@ -96,10 +96,6 @@ export function AnimatedBackground() {
         className="fixed inset-0 w-screen h-screen bg-gradient-to-b from-transparent via-black/20 to-black/30" 
         style={{ zIndex: -9 }} 
       />
-
-      {/* Border lines */}
-      <div className="fixed top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent opacity-30" />
-      <div className="fixed bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent opacity-30" />
     </div>
   )
 }

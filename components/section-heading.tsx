@@ -10,7 +10,7 @@ export function SectionHeading({ title, subtitle }: SectionHeadingProps) {
         <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
         <p className="text-zinc-500">{subtitle}</p>
       </div>
-      <div className="h-px flex-1 bg-zinc-800 md:block" />
+      <div className="h-px flex-1 md:block" />
     </div>
   )
 }

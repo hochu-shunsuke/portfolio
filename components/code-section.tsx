@@ -39,7 +39,7 @@ export function CodeSection() {
   };
 
   return (
-    <section id="code" className="py-16 md:py-28 bg-zinc-950">
+    <section id="code" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Code" subtitle="Clean, efficient, and maintainable" />
         <div className="mt-12 relative">
