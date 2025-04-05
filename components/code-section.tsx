@@ -3,6 +3,7 @@
 import { SectionHeading } from "@/components/section-heading"
 import { CodeSnippet } from "@/components/code-snippet"
 import { ScrollButton } from "@/components/ui/scroll-button"
+import { CustomScrollArea } from "@/components/ui/custom-scroll-area"
 import { useRef, useState, useEffect } from "react"
 
 export function CodeSection() {
@@ -45,12 +46,12 @@ export function CodeSection() {
         <div className="mt-12 relative">
           <ScrollButton direction="left" onClick={scrollLeft} show={showLeftArrow} />
 
-          <div 
+          <CustomScrollArea 
             ref={scrollContainerRef}
-            className="overflow-x-auto pb-4 hide-scrollbar"
+            className="pb-4"
             onScroll={checkArrows}
           >
-            <div className="flex gap-6 min-w-max">
+            <div className="flex gap-6 min-w-max px-1">
               <div className="w-[600px] shrink-0">
                 <CodeSnippet
                   title="React Hook: useMousePosition"
@@ -147,21 +148,11 @@ export function useIntersectionObserver(
                 />
               </div>
             </div>
-          </div>
+          </CustomScrollArea>
 
           <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
         </div>
       </div>
-
-      <style jsx>{`
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .hide-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   )
 }

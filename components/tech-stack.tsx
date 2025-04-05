@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import { ScrollButton } from "@/components/ui/scroll-button"
+import { CustomScrollArea } from "@/components/ui/custom-scroll-area"
 
 interface TechItem {
   name: string
@@ -51,24 +52,25 @@ export function TechStack({ items }: TechStackProps) {
     <div className="relative w-full">
       <ScrollButton direction="left" onClick={() => scroll("left")} show={showLeftArrow} />
 
-      <div
+      <CustomScrollArea 
         ref={scrollRef}
-        className="flex overflow-x-auto scrollbar-hide gap-6 px-4 py-6"
+        className="py-6"
         onScroll={checkArrows}
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center min-w-[120px] h-[120px] rounded-lg bg-zinc-900 border border-zinc-800 p-4 hover:border-zinc-700 transition-colors"
-          >
-            <div className="relative w-12 h-12 mb-2">
-              <Image src={item.logo || "/placeholder.svg"} alt={item.name} fill className="object-contain" />
+        <div className="flex gap-6 min-w-max px-1">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center min-w-[120px] h-[120px] rounded-lg bg-zinc-900 border border-zinc-800 p-4 hover:border-zinc-700 transition-colors"
+            >
+              <div className="relative w-12 h-12 mb-2">
+                <Image src={item.logo || "/placeholder.svg"} alt={item.name} fill className="object-contain" />
+              </div>
+              <span className="text-xs text-zinc-400 text-center">{item.name}</span>
             </div>
-            <span className="text-xs text-zinc-400 text-center">{item.name}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </CustomScrollArea>
 
       <ScrollButton direction="right" onClick={() => scroll("right")} show={showRightArrow} />
     </div>
