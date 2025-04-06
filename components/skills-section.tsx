@@ -4,17 +4,17 @@ import { TechStack } from "@/components/tech-stack"
 
 // Tech stack items with logos
 const techStackItems = [
-  { name: "React", logo: "/icons/react.png?height=48&width=48" },
-  { name: "Next.js", logo: "/icons/nextjs.png?height=48&width=48" },
-  { name: "TypeScript", logo: "/icons/typescript.png?height=48&width=48" },
+  { name: "React", logo: "/icons/react.svg?height=48&width=48" },
+  { name: "Next.js", logo: "/icons/nextjs.svg?height=48&width=48" },
+  { name: "TypeScript", logo: "/icons/typescript.svg?height=48&width=48" },
   { name: "supabase", logo: "/icons/supabase.svg?height=48&width=48" },
   { name: "Go", logo: "/icons/go.svg?height=48&width=48" },
-  { name: "Docker", logo: "/icons/docker.png?height=48&width=48" },
+  { name: "Docker", logo: "/icons/docker.svg?height=48&width=48" },
   { name: "Python", logo: "/icons/python.svg?height=48&width=48" },
-  { name: "AWS", logo: "/icons/aws.png?height=48&width=48" },
-  { name: "Django", logo: "/icons/django.png?height=48&width=48" },
-  { name: "Vercel", logo: "/icons/vercel.png?height=48&width=48" },
-  { name: "Vue.js", logo: "/icons/vuejs.png?height=48&width=48" },
+  { name: "AWS", logo: "/icons/aws.svg?height=48&width=48" },
+  { name: "Django", logo: "/icons/django.svg?height=48&width=48" },
+  { name: "Vercel", logo: "/icons/vercel.svg?height=48&width=48" },
+  { name: "Vue.js", logo: "/icons/vuejs.svg?height=48&width=48" },
   { name: "Dify", logo: "/icons/dify.svg?height=48&width=48" },
   { name: "GAS", logo: "/icons/GAS.svg?height=48&width=48" },
 ]
