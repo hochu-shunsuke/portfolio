@@ -64,11 +64,47 @@ export function ProjectsSection() {
               </div>
               <div className="w-[300px] md:w-[350px] flex-shrink-0">
                 <ProjectCard
-                  title="E-Commerce Platform"
-                  description="A modern e-commerce solution with seamless checkout experience"
-                  tags={["Next.js", "Stripe", "Tailwind"]}
-                  imageUrl="/placeholder.svg?height=200&width=300"
-                  link="/projects/ecommerce"
+                  title="Salesforceデータから自動PDF生成"
+                  description="SalesforceとGoogleDriveを連携して、自動的にPDFを生成するシステム。"
+                  tags={["GoogleAppsScript", "GoogleDrive", "Salesforce"]}
+                  imageUrl="/images/salesforce2pdf.png?width=300"
+                  link="/404"
+                />
+              </div>
+              <div className="w-[300px] md:w-[350px] flex-shrink-0">
+                <ProjectCard
+                  title="Hochuitter"
+                  description="Twitter x 掲示板の多機能SNSアプリ。豊富なカスタマイズ性。スケーラビリティの強化中。"
+                  tags={["Django", "Django Channels", "sqlite"]}
+                  imageUrl="/images/hochuitter.jpg?height=200&width=300"
+                  link="https://github.com/hochu-shunsuke/Hochuitter"
+                />
+              </div>
+              <div className="w-[300px] md:w-[350px] flex-shrink-0">
+                <ProjectCard
+                  title="Portfolio"
+                  description="AIツールを使って短期間で効率的に実装。AI活用を強みとしている。"
+                  tags={["Next.js", "TypeScript", "vercel", "AI"]}
+                  imageUrl="/images/hochu-portfolio.png?height=200&width=300"
+                  link="https://hochu-portfolio.vercel.app"
+                />
+              </div>
+              <div className="w-[300px] md:w-[350px] flex-shrink-0">
+                <ProjectCard
+                  title="ネットワーク構築"
+                  description="CiscoPacketTracerを用いた実践的なネットワーク構築。ネスペの取得を目指す。"
+                  tags={["CiscoPacketTracer", "Cisco"]}
+                  imageUrl="/images/network-studying.jpg?height=200&width=300"
+                  link="/404"
+                />
+              </div>
+              <div className="w-[300px] md:w-[350px] flex-shrink-0">
+                <ProjectCard
+                  title="アンケート+アイデアプラットフォーム"
+                  description="2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力して完成。"
+                  tags={["Django", "sqlite"]}
+                  imageUrl="/images/hacku.png?height=200&width=300"
+                  link="https://github.com/hochu-shunsuke/Hack-U-2024"
                 />
               </div>
               <div className="w-[300px] md:w-[350px] flex-shrink-0">

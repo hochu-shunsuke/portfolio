@@ -26,7 +26,7 @@ export function ProjectCard({ title, description, tags, imageUrl, link = "#" }: 
           alt={title}
           width={300}
           height={200}
-          className="w-full h-full object-cover"
+          className="w-full h-auto object-contain"
         />
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
