@@ -48,16 +48,16 @@ export function SkillsSection() {
               <h3 className="text-xl font-bold mb-8">Proficiency</h3>
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="space-y-6">
-                  <SkillBar name="Frontend Development" percentage={95} />
-                  <SkillBar name="Backend Development" percentage={85} />
-                  <SkillBar name="UI/UX Design" percentage={80} />
-                  <SkillBar name="DevOps" percentage={75} />
+                  <SkillBar name="sample" percentage={95} />
+                  <SkillBar name="sample" percentage={85} />
+                  <SkillBar name="sample" percentage={80} />
+                  <SkillBar name="sample" percentage={75} />
                 </div>
                 <div className="space-y-6">
-                  <SkillBar name="React/Next.js" percentage={98} />
-                  <SkillBar name="TypeScript" percentage={90} />
-                  <SkillBar name="Node.js" percentage={88} />
-                  <SkillBar name="Three.js/WebGL" percentage={82} />
+                  <SkillBar name="sample" percentage={98} />
+                  <SkillBar name="sample" percentage={90} />
+                  <SkillBar name="sample" percentage={88} />
+                  <SkillBar name="sample" percentage={82} />
                 </div>
               </div>
             </div>
