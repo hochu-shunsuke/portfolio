@@ -71,7 +71,7 @@ export function HeroSection() {
           </h1>
 
           <p className="max-w-[700px] mx-auto text-zinc-400 md:text-xl mb-8">
-            Developer, AI enthusiast
+            Web Developer, AI enthusiast
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -77,7 +77,7 @@ export function ProfileCard() {
           {/* Name and Title */}
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke</h2>
-            <p className="text-zinc-400">Developer, AI enthusiast</p>
+            <p className="text-zinc-400">Web Developer, AI enthusiast</p>
             <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
           </div>
 
@@ -106,7 +106,7 @@ export function ProfileCard() {
               {/* Name and Title */}
               <div>
                 <h2 className="text-3xl font-bold mb-2">Hochu Shunsuke</h2>
-                <p className="text-lg text-zinc-400 mb-1">Developer, AI enthusiast</p>
+                <p className="text-lg text-zinc-400 mb-1">Web Developer, AI enthusiast</p>
                 <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
               </div>
             </div>
@@ -126,12 +126,33 @@ export function ProfileCard() {
         <div className="h-px bg-zinc-800 my-6"></div>
 
         {/* Mission Section - Centered */}
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-zinc-400 leading-relaxed">
-            I'm studying to create a communication infrastructure for all to live.
-          </p>
+        <div className="text-center max-w-4xl mx-auto space-y-4">
+          <div className="space-y-3">
+            <p className="text-zinc-400 leading-relaxed">
+              Web開発、イベントの企画運営、コンテンツ作成に取り組んでいます。
+            </p>
+            <p className="text-zinc-400 leading-relaxed">
+              個人での開発領域は、Web技術、特に認証や大規模なSocial-app（SNS）です。
+            </p>
+            <p className="text-zinc-400 leading-relaxed">
+              人道支援や、貧困国での通信インフラに強く関心があります。
+            </p>
+          </div>
+          
+          <div className="pt-4 border-t border-zinc-800">
+            <div className="space-y-3 text-sm">
+              <p className="text-zinc-400 leading-relaxed">
+                貧困や紛争、情報格差のある環境で人々が生きるために必要な情報基盤を技術で支えたいと考えています。
+              </p>
+              <p className="text-zinc-400 leading-relaxed">
+                自身が一番楽しみながら、誰かの心に触れるようなプロダクトを作りたいと思っています。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    
   )
 }
