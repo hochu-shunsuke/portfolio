@@ -1,5 +1,4 @@
 import { SectionHeading } from "@/components/section-heading"
-import { SkillBar } from "@/components/skill-bar"
 import { TechStack } from "@/components/tech-stack"
 
 // Tech stack items with logos

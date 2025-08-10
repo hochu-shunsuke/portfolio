@@ -18,7 +18,7 @@ interface ProjectCardProps {
 export function ProjectCard({ title, description, tags, imageUrl, link = "#" }: ProjectCardProps) {
   return (
     <Card
-      className="overflow-hidden bg-zinc-900 border-zinc-800 transition-all duration-300 hover:border-zinc-700 group max-w-[350px] h-[450px] flex flex-col"
+      className="overflow-hidden bg-zinc-900 border-zinc-800 transition-all duration-300 hover:border-zinc-700 group w-full h-[450px] flex flex-col"
     >
       <div className="aspect-[3/2] overflow-hidden relative flex-shrink-0">
         <Image
