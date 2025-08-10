@@ -1,5 +1,65 @@
-import { Github, Twitter, Linkedin, Mail, Globe, User, Target, Award, AlertCircle, ThumbsUp } from "lucide-react"
+import { Github, Twitter, Linkedin, Mail, Globe, User, Target, Award, AlertCircle, ThumbsUp, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+// ソーシャルリンクの設定
+const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/hochu-shunsuke",
+    icon: Github,
+    iconSize: { mobile: "h-3 w-3", desktop: "h-4 w-4" }
+  },
+  {
+    name: "Instagram", 
+    href: "https://www.instagram.com/macho_hochu",
+    icon: Instagram,
+    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/hochu-shunsuke", 
+    icon: Linkedin,
+    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
+  },
+  {
+    name: "Email",
+    href: "mailto:hochu.shunsuke.dev@gmail.com",
+    icon: Mail,
+    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
+  },
+  {
+    name: "Website",
+    href: "https://hochu-portfolio.vercel.app",
+    icon: Globe,
+    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
+  }
+]
+
+// ソーシャルリンクボタンコンポーネント
+const SocialLinkButton = ({ 
+  link, 
+  isMobile = false 
+}: { 
+  link: typeof socialLinks[0], 
+  isMobile?: boolean 
+}) => {
+  const IconComponent = link.icon
+  const iconSize = isMobile ? link.iconSize.mobile : link.iconSize.desktop
+  const buttonSize = isMobile ? "h-8 w-8" : "h-10 w-10"
+  
+  return (
+    <a href={link.href} target="_blank" rel="noopener noreferrer">
+      <Button
+        variant="ghost"
+        size="icon"
+        className={`${buttonSize} rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200`}
+      >
+        <IconComponent className={iconSize} />
+        <span className="sr-only">{link.name}</span>
+      </Button>
+    </a>
+  )
+}
 
 export function ProfileCard() {
   return (
@@ -9,57 +69,14 @@ export function ProfileCard() {
         <div className="block md:hidden">
           {/* Social Icons */}
           <div className="flex space-x-3 mb-6 justify-center">
-            <a href="https://github.com/hochu-shunsuke" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-              >
-                <Github className="h-3 w-3" />
-                <span className="sr-only">GitHub</span>
-              </Button>
-            </a>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-            >
-              <Twitter className="h-4 w-4" />
-              <span className="sr-only">Twitter</span>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-            >
-              <Linkedin className="h-4 w-4" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
-            <a href="mailto:hochu.shunsuke.dev@gmail.com" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-              >
-                <Mail className="h-4 w-4" />
-                <span className="sr-only">Email</span>
-              </Button>
-            </a>
-            <a href="https://hochu-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-              >
-                <Globe className="h-4 w-4" />
-                <span className="sr-only">Website</span>
-              </Button>
-            </a>
+            {socialLinks.map((link) => (
+              <SocialLinkButton key={link.name} link={link} isMobile={true} />
+            ))}
           </div>
 
           {/* Name and Title */}
           <div className="mb-6 text-center">
-            <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke / 宝中俊介</h2>
+            <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke</h2>
             <p className="text-zinc-400">Developer, AI enthusiast</p>
             <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
           </div>
@@ -81,57 +98,14 @@ export function ProfileCard() {
             <div className="flex-1">
               {/* Social Icons */}
               <div className="flex space-x-3 mb-6">
-                <a href="https://github.com/hochu-shunsuke" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-                  >
-                    <Github className="h-5 w-5" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </a>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Button>
-                <a href="mailto:hochu.shunsuke.dev@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-                  >
-                    <Mail className="h-5 w-5" />
-                    <span className="sr-only">Email</span>
-                  </Button>
-                </a>
-                <a href="https://hochu-portfolio.vercel.app" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-10 w-10 rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200"
-                  >
-                    <Globe className="h-5 w-5" />
-                    <span className="sr-only">Website</span>
-                  </Button>
-                </a>
+                {socialLinks.map((link) => (
+                  <SocialLinkButton key={link.name} link={link} isMobile={false} />
+                ))}
               </div>
 
               {/* Name and Title */}
               <div>
-                <h2 className="text-3xl font-bold mb-2">Hochu Shunsuke / 宝中俊介</h2>
+                <h2 className="text-3xl font-bold mb-2">Hochu Shunsuke</h2>
                 <p className="text-lg text-zinc-400 mb-1">Developer, AI enthusiast</p>
                 <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
               </div>

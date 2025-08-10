@@ -35,29 +35,6 @@ export function SkillsSection() {
             <TechStack items={techStackItems} />
           </div>
         </div>
-
-        {/* Skill Bars */}
-        <div className="max-w-4xl mx-auto">
-          <div className="w-full bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/20">
-            <div className="p-6 md:p-8">
-              <h3 className="text-xl font-bold mb-8">Proficiency</h3>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="space-y-6">
-                  <SkillBar name="sample" percentage={95} />
-                  <SkillBar name="sample" percentage={85} />
-                  <SkillBar name="sample" percentage={80} />
-                  <SkillBar name="sample" percentage={75} />
-                </div>
-                <div className="space-y-6">
-                  <SkillBar name="sample" percentage={98} />
-                  <SkillBar name="sample" percentage={90} />
-                  <SkillBar name="sample" percentage={88} />
-                  <SkillBar name="sample" percentage={82} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
