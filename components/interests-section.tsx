@@ -29,7 +29,7 @@ export function InterestsSection() {
         <div className="mt-12">
           <ScrollableSection
             itemCount={musicPlaylists.length}
-            itemWidth={370} // カード幅 + ギャップ
+            itemWidth={374} // デスクトップ: カード350px + ギャップ24px
             scrollAmount={300}
             enableDrag={false}
             showIndicator={true}

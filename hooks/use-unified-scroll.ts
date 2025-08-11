@@ -36,8 +36,10 @@ export function useUnifiedScroll({
       setShowLeftArrow(!isAtStart)
       setShowRightArrow(!isAtEnd)
 
-      // 現在のインデックスを計算
-      const index = Math.round(element.scrollLeft / itemWidth)
+      // 現在のインデックスを計算 - レスポンシブ対応
+      const isDesktop = window.innerWidth >= 768 // md breakpoint
+      const actualItemWidth = isDesktop ? itemWidth : itemWidth * 0.8 // モバイルでは約80%の幅
+      const index = Math.round(element.scrollLeft / actualItemWidth)
       setCurrentIndex(Math.min(index, itemCount - 1))
 
       onScroll?.()

@@ -66,7 +66,7 @@ export function ProjectsSection() {
         <div className="mt-12">
           <ScrollableSection
             itemCount={projectsData.length}
-            itemWidth={350} // カード幅 + ギャップ
+            itemWidth={374} // デスクトップ: カード350px + ギャップ24px
             scrollAmount={300}
             enableDrag={true}
             showIndicator={true}
