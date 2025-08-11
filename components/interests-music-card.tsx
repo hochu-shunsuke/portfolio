@@ -6,7 +6,7 @@ interface InterestsMusicCardProps {
 
 export function InterestsMusicCard({ spotifyUrl }: InterestsMusicCardProps) {
   return (
-    <div className="w-full h-[450px]">
+    <div className="w-full h-[450px] transition-transform duration-300 hover:scale-[1.02] group">
       <iframe 
         data-testid="embed-iframe"
         style={{ borderRadius: '12px' }}
@@ -17,6 +17,7 @@ export function InterestsMusicCard({ spotifyUrl }: InterestsMusicCardProps) {
         allowFullScreen={true}
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy"
+        className="transition-all duration-300 group-hover:shadow-lg group-hover:shadow-zinc-900/20"
       />
     </div>
   )

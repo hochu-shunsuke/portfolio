@@ -3,7 +3,8 @@
 import { SectionHeading } from "@/components/section-heading"
 import { InterestsMusicCard } from "./interests-music-card"
 import { ScrollButton } from "@/components/ui/scroll-button"
-import { useRef, useState, useEffect } from "react"
+import { ScrollIndicator } from "@/components/ui/scroll-indicator"
+import { useScrollSection } from "@/hooks/use-scroll-section"
 
 // Spotify プレイリストの設定
 const musicPlaylists = [
@@ -11,51 +12,30 @@ const musicPlaylists = [
     spotifyUrl: "https://open.spotify.com/embed/playlist/6BLQf0A5yzSJVAI5Wo1ECC?utm_source=generator&theme=0"
   },
   {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/6BLQf0A5yzSJVAI5Wo1ECC?utm_source=generator&theme=0"
+    spotifyUrl: "https://open.spotify.com/embed/playlist/6qeI7Fjsyrhet1ba8x3B0F?utm_source=generator&theme=0"
   },
   {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/6BLQf0A5yzSJVAI5Wo1ECC?utm_source=generator&theme=0"
+    spotifyUrl: "https://open.spotify.com/embed/playlist/1eNiVtQ6RWz2XqDDOYmTyW?utm_source=generator&theme=0"
   },
   {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/6BLQf0A5yzSJVAI5Wo1ECC?utm_source=generator&theme=0"
+    spotifyUrl: "https://open.spotify.com/embed/playlist/4jjhdyoD1NymbcLZBMCVkE?utm_source=generator&theme=0"
   }
 ]
 
+
 export function InterestsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [showLeftArrow, setShowLeftArrow] = useState(false)
-  const [showRightArrow, setShowRightArrow] = useState(true)
-
-  const checkArrows = () => {
-    if (scrollRef.current) {
-      const element = scrollRef.current
-      const isAtStart = element.scrollLeft <= 5
-      const isAtEnd = element.scrollLeft >= element.scrollWidth - element.clientWidth - 5
-      
-      setShowLeftArrow(!isAtStart)
-      setShowRightArrow(!isAtEnd)
-    }
-  }
-
-  useEffect(() => {
-    checkArrows()
-    window.addEventListener("resize", checkArrows)
-    return () => window.removeEventListener("resize", checkArrows)
-  }, [])
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' })
-      setTimeout(checkArrows, 300)
-    }
-  }
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' })
-      setTimeout(checkArrows, 300)
-    }
-  }
+  const {
+    scrollRef,
+    showLeftArrow,
+    showRightArrow,
+    currentIndex,
+    scrollLeft,
+    scrollRight,
+    checkArrows
+  } = useScrollSection({
+    itemCount: musicPlaylists.length,
+    itemWidth: 320 // カード幅300px + ギャップ20px
+  })
 
   return (
     <section id="interests" className="py-16 md:py-28">
@@ -84,6 +64,12 @@ export function InterestsSection() {
           
           <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
         </div>
+
+        {/* スクロールインジケーター - モバイルのみ表示 */}
+        <ScrollIndicator 
+          itemCount={musicPlaylists.length}
+          currentIndex={currentIndex}
+        />
       </div>
     </section>
   )
