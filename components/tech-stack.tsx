@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ScrollButton } from "@/components/ui/scroll-button"
-import { useMouseDrag } from "@/hooks/use-mouse-drag"
+import { useUnifiedScroll } from "@/hooks/use-unified-scroll"
 
 interface TechItem {
   name: string
@@ -15,42 +15,30 @@ interface TechStackProps {
 }
 
 export function TechStack({ items }: TechStackProps) {
-  const [showLeftArrow, setShowLeftArrow] = useState(false)
-  const [showRightArrow, setShowRightArrow] = useState(true)
-
-  const checkArrows = () => {
-    if (ref.current) {
-      const element = ref.current
-      const isAtStart = element.scrollLeft <= 5
-      const isAtEnd = element.scrollLeft >= element.scrollWidth - element.clientWidth - 5
-      
-      setShowLeftArrow(!isAtStart)
-      setShowRightArrow(!isAtEnd)
-    }
-  }
-
-  const { ref, isGrabbing, scrollTo } = useMouseDrag({
-    onScroll: checkArrows
+  const {
+    scrollRef,
+    showLeftArrow,
+    showRightArrow,
+    scrollLeft,
+    scrollRight,
+    isGrabbing,
+    dragProps
+  } = useUnifiedScroll({
+    itemCount: items.length,
+    itemWidth: 136, // デスクトップ: min-w-[120px] + gap 16px
+    scrollAmount: 200,
+    enableDrag: true
   })
-
-  useEffect(() => {
-    checkArrows()
-    window.addEventListener("resize", checkArrows)
-    return () => window.removeEventListener("resize", checkArrows)
-  }, [])
-
-  const scroll = (direction: "left" | "right") => {
-    scrollTo(direction)
-  }
 
   return (
     <div className="relative w-full">
-      <ScrollButton direction="left" onClick={() => scroll("left")} show={showLeftArrow} />
+      <ScrollButton direction="left" onClick={scrollLeft} show={showLeftArrow} />
 
       <div 
-        ref={ref}
+        ref={scrollRef}
         className={`overflow-x-auto py-6 scrollbar-hide ${isGrabbing ? 'select-none' : ''}`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        {...dragProps}
       >
         <div className="flex gap-4 md:gap-6 px-4 md:px-6" style={{ width: 'max-content' }}>
           {items.map((item, index) => (
@@ -67,7 +55,7 @@ export function TechStack({ items }: TechStackProps) {
         </div>
       </div>
 
-      <ScrollButton direction="right" onClick={() => scroll("right")} show={showRightArrow} />
+      <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
     </div>
   )
 }
