@@ -2,10 +2,7 @@
 
 import { SectionHeading } from "@/components/section-heading"
 import { ProjectCard } from "@/components/project-card"
-import { ScrollButton } from "@/components/ui/scroll-button"
-import { ScrollIndicator } from "@/components/ui/scroll-indicator"
-import { useMouseDrag } from "@/hooks/use-mouse-drag"
-import { useState, useEffect } from "react"
+import { ScrollableSection } from "@/components/ui/scrollable-section"
 
 // プロジェクトデータの設定
 const projectsData = [
@@ -61,64 +58,18 @@ const projectsData = [
 ]
 
 export function ProjectsSection() {
-  // 既存のマウスドラッグ機能を保持
-  const [showLeftArrow, setShowLeftArrow] = useState(false)
-  const [showRightArrow, setShowRightArrow] = useState(true)
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const checkArrows = () => {
-    if (ref.current) {
-      const element = ref.current
-      const isAtStart = element.scrollLeft <= 5
-      const isAtEnd = element.scrollLeft >= element.scrollWidth - element.clientWidth - 5
-      
-      setShowLeftArrow(!isAtStart)
-      setShowRightArrow(!isAtEnd)
-
-      // インジケーター用のインデックス計算
-      const cardWidth = 320
-      const index = Math.round(element.scrollLeft / cardWidth)
-      setCurrentIndex(Math.min(index, projectsData.length - 1))
-    }
-  }
-
-  const { ref, isGrabbing, scrollTo } = useMouseDrag({
-    onScroll: checkArrows
-  })
-
-  useEffect(() => {
-    checkArrows()
-    window.addEventListener("resize", checkArrows)
-    return () => window.removeEventListener("resize", checkArrows)
-  }, [])
-
-  const scrollLeft = () => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: -300, behavior: 'smooth' })
-      setTimeout(checkArrows, 300)
-    }
-  }
-
-  const scrollRight = () => {
-    if (ref.current) {
-      ref.current.scrollBy({ left: 300, behavior: 'smooth' })
-      setTimeout(checkArrows, 300)
-    }
-  }
-
   return (
     <section id="projects" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
         
-        <div className="relative mt-12">
-          <ScrollButton direction="left" onClick={scrollLeft} show={showLeftArrow} />
-          
-          <div 
-            ref={ref}
-            className={`overflow-x-auto pb-6 scrollbar-hide ${isGrabbing ? 'select-none' : ''}`}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-            onScroll={checkArrows}
+        <div className="mt-12">
+          <ScrollableSection
+            itemCount={projectsData.length}
+            itemWidth={350} // カード幅 + ギャップ
+            scrollAmount={300}
+            enableDrag={true}
+            showIndicator={true}
           >
             <div className="flex gap-4 md:gap-6 px-4 md:px-6" style={{ width: 'max-content' }}>
               {projectsData.map((project, index) => (
@@ -133,16 +84,8 @@ export function ProjectsSection() {
                 </div>
               ))}
             </div>
-          </div>
-          
-          <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
+          </ScrollableSection>
         </div>
-
-        {/* スクロールインジケーター - モバイルのみ表示 */}
-        <ScrollIndicator 
-          itemCount={projectsData.length}
-          currentIndex={currentIndex}
-        />
       </div>
     </section>
   )
