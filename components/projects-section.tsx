@@ -11,7 +11,7 @@ const projectsData = [
     description: "HR企業のエンジニアインターンにて、他部門と連携し、設計、実装、デプロイまで担当。",
     tags: ["Auth0", "Next.js", "TypeScript", "supabase", "Vercel","jwt"],
     imageUrl: "/images/in-progress.png?height=200&width=300",
-    link: "https://github.com/hochu-shunsuke/Hochuitter"
+    link: ""
   },
   {
     title: "SNS開発",
