@@ -24,7 +24,7 @@ const projectsData = [
     title: "ハッカソンイベントの企画運営",
     description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
     tags: [],
-    imageUrl: "/images/AI-hackathon.png?height=200&width=300",
+    imageUrl: "/images/AI-hackathon.png?width=300",
     link: ""
   },
   {
