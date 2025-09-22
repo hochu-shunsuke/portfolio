@@ -7,6 +7,13 @@ import { ScrollableSection } from "@/components/ui/scrollable-section"
 // プロジェクトデータの設定
 const projectsData = [
   {
+    title: "就活サイト開発",
+    description: "HR企業のエンジニアインターンにて、他部門と連携し、設計、実装、デプロイまで担当。",
+    tags: ["Auth0", "Next.js", "TypeScript", "supabase", "Vercel","jwt"],
+    imageUrl: "/images/in-progress.png?height=200&width=300",
+    link: ""
+  },
+  {
     title: "SNS開発",
     description: "Twitter x 掲示板の多機能SNSアプリ。豊富なカスタマイズ性。スケーラビリティの強化中。",
     tags: ["Django", "Django Channels", "sqlite"],
@@ -14,18 +21,18 @@ const projectsData = [
     link: "https://github.com/hochu-shunsuke/Hochuitter"
   },
   {
+    title: "ハッカソンイベントの企画運営",
+    description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
+    tags: ["企画・運営", "AI活用"],
+    imageUrl: "/images/AI-hackathon.png?width=300",
+    link: "https://connpass.com/event/358377/"
+  },
+  {
     title: "HackU 2024",
     description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力して完成。",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png?height=200&width=300",
     link: "https://github.com/hochu-shunsuke/Hack-U-2024"
-  },
-  {
-    title: "ハッカソンイベントの企画運営",
-    description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
-    tags: [],
-    imageUrl: "/images/AI-hackathon.png?height=200&width=300",
-    link: ""
   },
   {
     title: "天気情報アプリ",

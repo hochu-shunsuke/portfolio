@@ -6,6 +6,7 @@ const techStackItems = [
   { name: "Next.js", logo: "/icons/nextjs.svg?height=48&width=48" },
   { name: "TypeScript", logo: "/icons/typescript.svg?height=48&width=48" },
   { name: "supabase", logo: "/icons/supabase.svg?height=48&width=48" },
+  { name: "Auth0", logo: "/icons/auth0.svg?height=48&width=48" },
   { name: "Go", logo: "/icons/go.svg?height=48&width=48" },
   { name: "Python", logo: "/icons/python.svg?height=48&width=48" },
   { name: "Django", logo: "/icons/django.svg?height=48&width=48" },
