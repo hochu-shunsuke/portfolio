@@ -14,18 +14,18 @@ const projectsData = [
     link: "https://github.com/hochu-shunsuke/Hochuitter"
   },
   {
-    title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力して完成。",
-    tags: ["Django", "sqlite"],
-    imageUrl: "/images/hacku.png?height=200&width=300",
-    link: "https://github.com/hochu-shunsuke/Hack-U-2024"
-  },
-  {
     title: "ハッカソンイベントの企画運営",
     description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
     tags: [],
     imageUrl: "/images/AI-hackathon.png?width=300",
     link: ""
+  },
+  {
+    title: "HackU 2024",
+    description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力して完成。",
+    tags: ["Django", "sqlite"],
+    imageUrl: "/images/hacku.png?height=200&width=300",
+    link: "https://github.com/hochu-shunsuke/Hack-U-2024"
   },
   {
     title: "天気情報アプリ",
