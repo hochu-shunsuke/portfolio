@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "hochu-portfolio",
-  description: "Created with v0"
+  description: "Created with Next.js"
 }
 
 export default function RootLayout({
