@@ -9,7 +9,7 @@ const projectsData = [
   {
     title: "就活サイト開発",
     description: "HR企業のエンジニアインターンにて、他部門と連携し、設計、実装、デプロイまで担当。",
-    tags: ["Auth0", "Next.js", "TypeScript", "supabase", "Vercel","jwt"],
+    tags: ["better-auth", "Next.js", "supabase", "Vercel","jwt"],
     imageUrl: "/images/orcareer.png?width=300",
     link: ""
   },
