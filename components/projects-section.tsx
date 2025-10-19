@@ -7,8 +7,8 @@ import { ScrollableSection } from "@/components/ui/scrollable-section"
 // プロジェクトデータの設定
 const projectsData = [
   {
-    title: "就活サイト開発",
-    description: "HR企業のエンジニアインターンにて、他部門と連携し、設計、実装、デプロイまで担当。",
+    title: "求人サービス開発",
+    description: "HR企業の開発インターンにて、他部門と連携し技術選定、設計、実装、デプロイまで担当。",
     tags: ["better-auth", "Next.js", "supabase", "Vercel","jwt"],
     imageUrl: "/images/orcareer.png?width=300",
     link: ""
