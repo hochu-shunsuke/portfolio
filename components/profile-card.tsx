@@ -1,5 +1,6 @@
 import { Github, Twitter, Linkedin, Mail, Globe, User, Target, Award, AlertCircle, ThumbsUp, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 // ソーシャルリンクの設定
 const socialLinks = [
@@ -83,10 +84,12 @@ export function ProfileCard() {
 
           {/* Profile Image */}
           <div className="flex justify-center mb-6">
-            <img 
-              src="https://github.com/hochu-shunsuke.png" 
-              alt="Profile Picture" 
-              className="w-24 h-24 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200" 
+            <Image
+              src="https://github.com/hochu-shunsuke.png"
+              alt="Profile Picture"
+              width={96}
+              height={96}
+              className="w-24 h-24 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200"
             />
           </div>
         </div>
@@ -113,10 +116,12 @@ export function ProfileCard() {
 
             {/* Right Side - Profile Image */}
             <div className="flex-shrink-0">
-              <img 
-                src="https://github.com/hochu-shunsuke.png" 
-                alt="Profile Picture" 
-                className="w-32 h-32 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200" 
+              <Image
+              src="https://github.com/hochu-shunsuke.png"
+              alt="Profile Picture"
+              width={128}
+              height={128}
+              className="w-32 h-32 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200"
               />
             </div>
           </div>
@@ -129,23 +134,23 @@ export function ProfileCard() {
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="space-y-3">
             <p className="text-zinc-400 leading-relaxed">
-              Web開発、イベントの企画運営、コンテンツ作成に取り組んでいます。
+              Web開発，イベントの企画運営，コンテンツ作成に取り組んでいます．
             </p>
             <p className="text-zinc-400 leading-relaxed">
-              個人での開発領域は、Web技術、特に認証や大規模なSocial-app（SNS）です。
+              Next.jsを用いたWebアプリ開発に取り組んでいます．
             </p>
             <p className="text-zinc-400 leading-relaxed">
-              人道支援や、貧困国での通信インフラに強く関心があります。
+              人道支援や，貧困国での通信インフラに強く関心があります．
             </p>
           </div>
           
           <div className="pt-4 border-t border-zinc-800">
             <div className="space-y-3 text-sm">
               <p className="text-zinc-400 leading-relaxed">
-                貧困や紛争、情報格差のある環境で人々が生きるために必要な情報基盤を技術で支えたいと考えています。
+                貧困や紛争，情報格差のある環境で人々が生きるために必要な情報基盤を技術で支えたいと考えています．
               </p>
               <p className="text-zinc-400 leading-relaxed">
-                自身でも楽しみながら、誰かの心に触れるようなプロダクトをつくりたいと考えています．
+                自身でも楽しみながら，誰かの心に触れるようなプロダクトをつくりたいと考えています．
               </p>
             </div>
           </div>

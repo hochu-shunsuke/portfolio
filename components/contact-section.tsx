@@ -60,7 +60,7 @@ export function ContactSection() {
               I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
             </p>
             <small className="text-zinc-400">
-            新しいプロジェクトやアイデア、一緒に何かできそうなことがあれば、お気軽にご連絡ください！
+            新しいプロジェクトやアイデア，一緒に何かできそうなことがあれば，お気軽にご連絡ください！
             </small>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (

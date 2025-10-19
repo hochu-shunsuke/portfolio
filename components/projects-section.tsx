@@ -8,56 +8,56 @@ import { ScrollableSection } from "@/components/ui/scrollable-section"
 const projectsData = [
   {
     title: "求人サービス開発",
-    description: "HR企業の開発インターンにて、他部門と連携し技術選定、設計、実装、デプロイまで担当。",
+    description: "HR企業の開発インターンにて，他部門と連携し技術選定，設計，実装，デプロイまで担当．",
     tags: ["better-auth", "Next.js", "supabase", "Vercel","jwt"],
     imageUrl: "/images/orcareer.png?width=300",
     link: ""
   },
   {
     title: "SNS開発",
-    description: "Twitter x 掲示板の多機能SNSアプリ。豊富なカスタマイズ性。スケーラビリティの強化中。",
+    description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
     tags: ["Django", "Django Channels", "sqlite"],
     imageUrl: "/images/hochuitter.jpg?height=200&width=300",
     link: "https://github.com/hochu-shunsuke/Hochuitter"
   },
   {
     title: "ハッカソンイベントの企画運営",
-    description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
+    description: "2025年インターン先で複数のハッカソンイベントを企画・運営．",
     tags: ["企画・運営", "AI活用"],
     imageUrl: "/images/AI-hackathon.png?width=300",
     link: "https://connpass.com/event/358377/"
   },
   {
     title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力して完成。",
+    description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力して完成．",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png?height=200&width=300",
     link: "https://github.com/hochu-shunsuke/Hack-U-2024"
   },
   {
     title: "天気情報アプリ",
-    description: "リアルタイム天気情報を提供するアプリ。モダンな開発の練習。",
+    description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
     link: "https://hochu-weather.vercel.app"
   },
   {
     title: "ネットワーク構築",
-    description: "CiscoPacketTracerを用いた実践的なネットワーク構築。ネスペの取得を目指す。",
+    description: "CiscoPacketTracerを用いた実践的なネットワーク構築．ネスペの取得を目指す．",
     tags: ["CiscoPacketTracer", "Cisco"],
     imageUrl: "/images/network-studying.jpg?height=200&width=300",
     link: "/404"
   },
   {
     title: "Salesforceデータから自動PDF生成",
-    description: "SalesforceとGoogleDriveを連携して、自動的にPDFを生成するシステム。",
+    description: "SalesforceとGoogleDriveを連携して，自動的にPDFを生成するシステム．",
     tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
     imageUrl: "/images/salesforce2pdf.png?width=300",
     link: "/404"
   },
   {
     title: "Portfolio",
-    description: "AIツールを使って短期間で効率的に実装。AI活用を強みとしている。",
+    description: "AIツールを使って短期間で効率的に実装．AI活用を強みとしている．",
     tags: ["Next.js", "TypeScript", "vercel", "AI"],
     imageUrl: "/images/hochu-portfolio.png?height=200&width=300",
     link: "https://hochu-portfolio.vercel.app"

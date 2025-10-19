@@ -6,7 +6,7 @@ interface ProvidersProps {
   children: ReactNode
 }
 
-// 早期に実行されるように、コンポーネントの外で定義
+// 早期に実行されるように，コンポーネントの外で定義
 if (typeof window !== "undefined" && !(window as any).ethereum) {
   // Web3非対応環境用のモックオブジェクト
   const mockEthereum = {
