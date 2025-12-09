@@ -11,14 +11,14 @@ const socialLinks = [
     iconSize: { mobile: "h-3 w-3", desktop: "h-4 w-4" }
   },
   {
-    name: "Instagram", 
+    name: "Instagram",
     href: "https://www.instagram.com/macho_hochu",
     icon: Instagram,
     iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hochu-shunsuke", 
+    href: "https://www.linkedin.com/in/hochu-shunsuke",
     icon: Linkedin,
     iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
   },
@@ -37,17 +37,17 @@ const socialLinks = [
 ]
 
 // ソーシャルリンクボタンコンポーネント
-const SocialLinkButton = ({ 
-  link, 
-  isMobile = false 
-}: { 
-  link: typeof socialLinks[0], 
-  isMobile?: boolean 
+const SocialLinkButton = ({
+  link,
+  isMobile = false
+}: {
+  link: typeof socialLinks[0],
+  isMobile?: boolean
 }) => {
   const IconComponent = link.icon
   const iconSize = isMobile ? link.iconSize.mobile : link.iconSize.desktop
   const buttonSize = isMobile ? "h-8 w-8" : "h-10 w-10"
-  
+
   return (
     <a href={link.href} target="_blank" rel="noopener noreferrer">
       <Button
@@ -117,11 +117,11 @@ export function ProfileCard() {
             {/* Right Side - Profile Image */}
             <div className="flex-shrink-0">
               <Image
-              src="https://github.com/hochu-shunsuke.png"
-              alt="Profile Picture"
-              width={128}
-              height={128}
-              className="w-32 h-32 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200"
+                src="https://github.com/hochu-shunsuke.png"
+                alt="Profile Picture"
+                width={128}
+                height={128}
+                className="w-32 h-32 rounded-full border-2 border-zinc-700 hover:border-zinc-600 transition-colors duration-200"
               />
             </div>
           </div>
@@ -134,16 +134,16 @@ export function ProfileCard() {
         <div className="text-center max-w-4xl mx-auto space-y-4">
           <div className="space-y-3">
             <p className="text-zinc-400 leading-relaxed">
-              Web開発，イベントの企画運営，コンテンツ作成に取り組んでいます．
+              Web開発，イベントの企画運営，コンテンツ作成など広く取り組んでおります．
             </p>
             <p className="text-zinc-400 leading-relaxed">
-              Next.jsを用いたWebアプリ開発に取り組んでいます．
+              現在は人材系ベンチャーのエンジニアとして求人サイトの開発を担当しています．
             </p>
             <p className="text-zinc-400 leading-relaxed">
-              人道支援や，貧困国での通信インフラに強く関心があります．
+              貧困国における通信インフラの改善に強く関心があります．
             </p>
           </div>
-          
+
           <div className="pt-4 border-t border-zinc-800">
             <div className="space-y-3 text-sm">
               <p className="text-zinc-400 leading-relaxed">
@@ -158,6 +158,6 @@ export function ProfileCard() {
       </div>
     </div>
 
-    
+
   )
 }

@@ -9,16 +9,9 @@ const projectsData = [
   {
     title: "求人サービス開発",
     description: "HR企業の開発インターンにて，他部門と連携し技術選定，設計，実装，デプロイまで担当．",
-    tags: ["better-auth", "Next.js", "supabase", "Vercel","jwt"],
+    tags: ["better-auth", "Next.js", "supabase", "Vercel", "jwt"],
     imageUrl: "/images/orcareer.png?width=300",
     link: ""
-  },
-  {
-    title: "SNS開発",
-    description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
-    tags: ["Django", "Django Channels", "sqlite"],
-    imageUrl: "/images/hochuitter.jpg?height=200&width=300",
-    link: "https://github.com/hochu-shunsuke/Hochuitter"
   },
   {
     title: "ハッカソンイベントの企画運営",
@@ -26,6 +19,20 @@ const projectsData = [
     tags: ["企画・運営", "AI活用"],
     imageUrl: "/images/AI-hackathon.png?width=300",
     link: "https://connpass.com/event/358377/"
+  },
+  {
+    title: "SalesforceデータからPDF自動生成",
+    description: "Salesforceデータから請求書を自動作成しGoogleDriveに保存するシステム．",
+    tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
+    imageUrl: "/images/salesforce2pdf.png?width=300",
+    link: "/404"
+  },
+  {
+    title: "HPの製作代行",
+    description: "テック企業のHPの製作代行．",
+    tags: ["HTML", "CSS", "JavaScript"],
+    imageUrl: "/images/HP-seisaku.png?width=300",
+    link: "/404"
   },
   {
     title: "HackU 2024",
@@ -39,7 +46,7 @@ const projectsData = [
     description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
-    link: "https://hochu-weather.vercel.app"
+    link: "/404"
   },
   {
     title: "ネットワーク構築",
@@ -49,11 +56,18 @@ const projectsData = [
     link: "/404"
   },
   {
-    title: "Salesforceデータから自動PDF生成",
-    description: "SalesforceとGoogleDriveを連携して，自動的にPDFを生成するシステム．",
-    tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
-    imageUrl: "/images/salesforce2pdf.png?width=300",
-    link: "/404"
+    title: "SNS開発",
+    description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
+    tags: ["Django", "Django Channels", "sqlite"],
+    imageUrl: "/images/hochuitter.jpg?height=200&width=300",
+    link: "https://github.com/hochu-shunsuke/Hochuitter"
+  },
+  {
+    title: "課題リマインダー",
+    description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム．",
+    tags: ["GoogleAppsScript", "GoogleTask", "SAML"],
+    imageUrl: "/images/kadai-reminder.png?height=200&width=300",
+    link: "https://hochu-shunsuke.github.io/meijo_kadai_reminder/"
   },
   {
     title: "Portfolio",
@@ -69,7 +83,7 @@ export function ProjectsSection() {
     <section id="projects" className="py-16 md:py-28">
       <div className="container px-4 md:px-6">
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
-        
+
         <div className="mt-12">
           <ScrollableSection
             itemCount={projectsData.length}
