@@ -45,13 +45,15 @@ export function ProjectCard({ title, description, tags, imageUrl, link = "#" }: 
           ))}
         </div>
       </CardContent>
-      <CardFooter className="p-4 pt-0 flex-shrink-0 flex justify-start">
-        <Link href={link}>
-          <Button variant="ghost" className="px-0 text-zinc-400 hover:text-white text-sm">
-            View Project <ArrowUpRight className="ml-1 h-4 w-4" />
-          </Button>
-        </Link>
-      </CardFooter>
+      {link && link !== "#" && (
+        <CardFooter className="p-4 pt-0 flex-shrink-0 flex justify-start">
+          <Link href={link} target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" className="px-0 text-zinc-400 hover:text-white text-sm">
+              View Project <ArrowUpRight className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
+        </CardFooter>
+      )}
     </Card>
   )
 }

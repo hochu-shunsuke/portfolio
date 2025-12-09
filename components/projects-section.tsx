@@ -25,56 +25,56 @@ const projectsData = [
     description: "Salesforceデータから請求書を自動作成しGoogleDriveに保存するシステム．",
     tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
     imageUrl: "/images/salesforce2pdf.png?width=300",
-    link: "/404"
+    link: ""
   },
   {
     title: "HPの製作代行",
     description: "テック企業のHPの製作代行．",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: "/images/HP-seisaku.png?width=300",
-    link: "/404"
+    link: ""
   },
   {
     title: "HackU 2024",
     description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力して完成．",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png?height=200&width=300",
-    link: "https://github.com/hochu-shunsuke/Hack-U-2024"
+    link: ""
   },
   {
     title: "天気情報アプリ",
     description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
-    link: "/404"
+    link: ""
   },
   {
     title: "ネットワーク構築",
     description: "CiscoPacketTracerを用いた実践的なネットワーク構築．ネスペの取得を目指す．",
     tags: ["CiscoPacketTracer", "Cisco"],
     imageUrl: "/images/network-studying.jpg?height=200&width=300",
-    link: "/404"
+    link: ""
   },
   {
     title: "SNS開発",
     description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
     tags: ["Django", "Django Channels", "sqlite"],
     imageUrl: "/images/hochuitter.jpg?height=200&width=300",
-    link: "https://github.com/hochu-shunsuke/Hochuitter"
+    link: ""
   },
   {
     title: "課題リマインダー",
     description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム．",
     tags: ["GoogleAppsScript", "GoogleTask", "SAML"],
     imageUrl: "/images/kadai-reminder.png?height=200&width=300",
-    link: "https://hochu-shunsuke.github.io/meijo_kadai_reminder/"
+    link: ""
   },
   {
     title: "Portfolio",
     description: "AIツールを使って短期間で効率的に実装．AI活用を強みとしている．",
     tags: ["Next.js", "TypeScript", "vercel", "AI"],
     imageUrl: "/images/hochu-portfolio.png?height=200&width=300",
-    link: "https://hochu-portfolio.vercel.app"
+    link: ""
   }
 ]
 
