@@ -36,7 +36,7 @@ export const socialLinks = [
 export const projectsData = [
   {
     title: "求人サービス開発",
-    description: "HR企業の開発インターンにて，他部門と連携し技術選定，設計，実装，デプロイまで担当．",
+    description: "HR企業の開発インターンにて，他部門と連携しメインエンジニアとして技術選定，設計，実装を担当．",
     tags: ["better-auth", "Next.js", "supabase", "Vercel", "jwt"],
     imageUrl: "/images/orcareer.png",
     link: ""
