@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import React, { useMemo } from "react"
 
 // Generate animated path data with improved visibility
 const generatePaths = (position: number) => {
@@ -17,9 +18,38 @@ const generatePaths = (position: number) => {
   }))
 }
 
+// Math.random() を排除し、インデックスに基づいた決定論的な値を生成することで
+// ハイドレーションエラーを防ぎつつ、ランダムな見た目を維持する
+const AnimatedPath = React.memo(({ path, index, offset = 0 }: { path: any, index: number, offset?: number }) => {
+  // 擬似ランダムなduration生成 (15〜25秒の範囲)
+  const duration = 15 + ((index * 3 + offset) % 10);
+  
+  return (
+    <motion.path
+      d={path.d}
+      stroke="currentColor"
+      strokeWidth={path.width}
+      strokeOpacity={0.3 + path.id * 0.03}
+      initial={{ pathLength: 0.3, opacity: 0.8 }}
+      animate={{
+        pathLength: 1,
+        opacity: [0.5, 0.8, 0.5],
+        pathOffset: [0, 1, 0],
+      }}
+      transition={{
+        duration: duration,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "linear",
+      }}
+    />
+  )
+})
+AnimatedPath.displayName = "AnimatedPath"
+
 export function AnimatedBackground() {
-  const pathsPositive = generatePaths(1)
-  const pathsNegative = generatePaths(-1)
+  // 計算コストの高いパス生成をメモ化
+  const pathsPositive = useMemo(() => generatePaths(1), [])
+  const pathsNegative = useMemo(() => generatePaths(-1), [])
 
   return (
     <div className="contents">
@@ -36,25 +66,8 @@ export function AnimatedBackground() {
             preserveAspectRatio="xMidYMid slice"
             fill="none"
           >
-            {pathsPositive.map((path) => (
-              <motion.path
-                key={`pos-${path.id}`}
-                d={path.d}
-                stroke="currentColor"
-                strokeWidth={path.width}
-                strokeOpacity={0.3 + path.id * 0.03}
-                initial={{ pathLength: 0.3, opacity: 0.8 }}
-                animate={{
-                  pathLength: 1,
-                  opacity: [0.5, 0.8, 0.5],
-                  pathOffset: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 15 + Math.random() * 10,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                }}
-              />
+            {pathsPositive.map((path, i) => (
+              <AnimatedPath key={`pos-${path.id}`} path={path} index={i} />
             ))}
           </svg>
         </div>
@@ -67,25 +80,8 @@ export function AnimatedBackground() {
             preserveAspectRatio="xMidYMid slice"
             fill="none"
           >
-            {pathsNegative.map((path) => (
-              <motion.path
-                key={`neg-${path.id}`}
-                d={path.d}
-                stroke="currentColor"
-                strokeWidth={path.width}
-                strokeOpacity={0.3 + path.id * 0.03}
-                initial={{ pathLength: 0.3, opacity: 0.8 }}
-                animate={{
-                  pathLength: 1,
-                  opacity: [0.5, 0.8, 0.5],
-                  pathOffset: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 15 + Math.random() * 10,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                }}
-              />
+            {pathsNegative.map((path, i) => (
+              <AnimatedPath key={`neg-${path.id}`} path={path} index={i} offset={5} />
             ))}
           </svg>
         </div>
@@ -99,3 +95,4 @@ export function AnimatedBackground() {
     </div>
   )
 }
+

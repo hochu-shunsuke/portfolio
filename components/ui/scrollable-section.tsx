@@ -49,7 +49,6 @@ export function ScrollableSection({
         ref={scrollRef}
         className={`overflow-x-auto pb-6 scrollbar-hide ${isGrabbing ? 'select-none' : ''} ${className}`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        onScroll={checkArrows}
         {...dragProps}
       >
         {children}
