@@ -8,6 +8,7 @@ export function InterestsMusicCard({ spotifyUrl }: InterestsMusicCardProps) {
   return (
     <div className="w-full h-[450px] transition-transform duration-300 hover:scale-[1.02] group">
       <iframe 
+        title="Spotify Playlist"
         data-testid="embed-iframe"
         style={{ borderRadius: '12px' }}
         src={spotifyUrl}

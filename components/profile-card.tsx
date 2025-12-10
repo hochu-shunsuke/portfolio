@@ -44,7 +44,7 @@ export function ProfileCard() {
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke</h2>
             <p className="text-zinc-400">Web Developer, AI enthusiast</p>
-            <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
+            <p className="text-zinc-400">Nagoya, Japan born in 2005</p>
           </div>
 
           {/* Profile Image */}
@@ -75,7 +75,7 @@ export function ProfileCard() {
               <div>
                 <h2 className="text-3xl font-bold mb-2">Hochu Shunsuke</h2>
                 <p className="text-lg text-zinc-400 mb-1">Web Developer, AI enthusiast</p>
-                <p className="text-zinc-500">Nagoya, Japan born in 2005</p>
+                <p className="text-zinc-400">Nagoya, Japan born in 2005</p>
               </div>
             </div>
 
