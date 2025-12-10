@@ -1,53 +1,19 @@
-import { Github, Twitter, Linkedin, Mail, Globe, User, Target, Award, AlertCircle, ThumbsUp, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-
-// ソーシャルリンクの設定
-const socialLinks = [
-  {
-    name: "GitHub",
-    href: "https://github.com/hochu-shunsuke",
-    icon: Github,
-    iconSize: { mobile: "h-3 w-3", desktop: "h-4 w-4" }
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/macho_hochu",
-    icon: Instagram,
-    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hochu-shunsuke",
-    icon: Linkedin,
-    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
-  },
-  {
-    name: "Email",
-    href: "mailto:hochu.shunsuke.dev@gmail.com",
-    icon: Mail,
-    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
-  },
-  {
-    name: "Website",
-    href: "https://hochu-portfolio.vercel.app",
-    icon: Globe,
-    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
-  }
-]
+import { socialLinks } from "@/lib/data"
 
 // ソーシャルリンクボタンコンポーネント
-const SocialLinkButton = ({
-  link,
-  isMobile = false
-}: {
-  link: typeof socialLinks[0],
-  isMobile?: boolean
+const SocialLinkButton = ({ 
+  link, 
+  isMobile = false 
+}: { 
+  link: typeof socialLinks[0], 
+  isMobile?: boolean 
 }) => {
   const IconComponent = link.icon
   const iconSize = isMobile ? link.iconSize.mobile : link.iconSize.desktop
   const buttonSize = isMobile ? "h-8 w-8" : "h-10 w-10"
-
+  
   return (
     <a href={link.href} target="_blank" rel="noopener noreferrer">
       <Button
@@ -61,7 +27,6 @@ const SocialLinkButton = ({
     </a>
   )
 }
-
 export function ProfileCard() {
   return (
     <div className="w-full max-w-3xl mx-auto bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/20">

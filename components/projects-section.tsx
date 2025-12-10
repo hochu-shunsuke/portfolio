@@ -3,80 +3,7 @@
 import { SectionHeading } from "@/components/section-heading"
 import { ProjectCard } from "@/components/project-card"
 import { ScrollableSection } from "@/components/ui/scrollable-section"
-
-// プロジェクトデータの設定
-const projectsData = [
-  {
-    title: "求人サービス開発",
-    description: "HR企業の開発インターンにて，他部門と連携し技術選定，設計，実装，デプロイまで担当．",
-    tags: ["better-auth", "Next.js", "supabase", "Vercel", "jwt"],
-    imageUrl: "/images/orcareer.png?width=300",
-    link: ""
-  },
-  {
-    title: "ハッカソンイベントの企画運営",
-    description: "2025年インターン先で複数のハッカソンイベントを企画・運営．",
-    tags: ["企画・運営", "AI活用"],
-    imageUrl: "/images/AI-hackathon.png?width=300",
-    link: "https://connpass.com/event/358377/"
-  },
-  {
-    title: "SalesforceデータからPDF自動生成",
-    description: "Salesforceデータから請求書を自動作成しGoogleDriveに保存するシステム．",
-    tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
-    imageUrl: "/images/salesforce2pdf.png?width=300",
-    link: ""
-  },
-  {
-    title: "HPの製作代行",
-    description: "テック企業のHPの製作代行．",
-    tags: ["HTML", "CSS", "JavaScript"],
-    imageUrl: "/images/HP-seisaku.png?width=300",
-    link: ""
-  },
-  {
-    title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力して完成．",
-    tags: ["Django", "sqlite"],
-    imageUrl: "/images/hacku.png?height=200&width=300",
-    link: ""
-  },
-  {
-    title: "天気情報アプリ",
-    description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
-    tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
-    imageUrl: "/images/hochu-weather.png",
-    link: ""
-  },
-  {
-    title: "ネットワーク構築",
-    description: "CiscoPacketTracerを用いた実践的なネットワーク構築．ネスペの取得を目指す．",
-    tags: ["CiscoPacketTracer", "Cisco"],
-    imageUrl: "/images/network-studying.jpg?height=200&width=300",
-    link: ""
-  },
-  {
-    title: "SNS開発",
-    description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
-    tags: ["Django", "Django Channels", "sqlite"],
-    imageUrl: "/images/hochuitter.jpg?height=200&width=300",
-    link: ""
-  },
-  {
-    title: "課題リマインダー",
-    description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム．",
-    tags: ["GoogleAppsScript", "GoogleTask", "SAML"],
-    imageUrl: "/images/kadai-reminder.png?height=200&width=300",
-    link: ""
-  },
-  {
-    title: "Portfolio",
-    description: "AIツールを使って短期間で効率的に実装．AI活用を強みとしている．",
-    tags: ["Next.js", "TypeScript", "vercel", "AI"],
-    imageUrl: "/images/hochu-portfolio.png?height=200&width=300",
-    link: ""
-  }
-]
+import { projectsData } from "@/lib/data"
 
 export function ProjectsSection() {
   return (
@@ -84,7 +11,7 @@ export function ProjectsSection() {
       <div className="container px-4 md:px-6">
         <SectionHeading title="Projects" subtitle="Selected works and experiments" />
 
-        <div className="mt-12">
+        <div className="mt-12 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
           <ScrollableSection
             itemCount={projectsData.length}
             itemWidth={374} // デスクトップ: カード350px + ギャップ24px
@@ -92,7 +19,7 @@ export function ProjectsSection() {
             enableDrag={true}
             showIndicator={true}
           >
-            <div className="flex gap-4 md:gap-6 px-4 md:px-6" style={{ width: 'max-content' }}>
+            <div className="flex gap-4 md:gap-6 px-4 md:px-6 max-w-[1400px] mx-auto" style={{ width: 'max-content' }}>
               {projectsData.map((project, index) => (
                 <div key={index} className="w-[280px] md:w-[350px] flex-shrink-0">
                   <ProjectCard
@@ -111,3 +38,4 @@ export function ProjectsSection() {
     </section>
   )
 }
+

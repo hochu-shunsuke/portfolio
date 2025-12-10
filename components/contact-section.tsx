@@ -1,35 +1,6 @@
-import { Github, Mail, Twitter, Linkedin, Globe, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionHeading } from "@/components/section-heading"
-
-// ソーシャルリンクの設定
-const socialLinks = [
-  {
-    name: "GitHub",
-    href: "https://github.com/hochu-shunsuke",
-    icon: Github,
-  },
-  {
-    name: "Instagram", 
-    href: "https://www.instagram.com/macho_hochu",
-    icon: Instagram,
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hochu-shunsuke", 
-    icon: Linkedin,
-  },
-  {
-    name: "Email",
-    href: "mailto:hochu.shunsuke.dev@gmail.com",
-    icon: Mail,
-  },
-  {
-    name: "Website",
-    href: "https://hochu-portfolio.vercel.app",
-    icon: Globe,
-  }
-]
+import { socialLinks } from "@/lib/data"
 
 // ソーシャルリンクボタンコンポーネント（コンタクト用）
 const SocialLinkButton = ({ link }: { link: typeof socialLinks[0] }) => {
@@ -48,6 +19,7 @@ const SocialLinkButton = ({ link }: { link: typeof socialLinks[0] }) => {
     </a>
   )
 }
+
 
 export function ContactSection() {
   return (

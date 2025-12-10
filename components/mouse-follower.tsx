@@ -1,11 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function MouseFollower() {
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
+  const cursorRef = useRef<HTMLDivElement>(null)
   const [isMobile, setIsMobile] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  
+  // 現在のマウス位置とカーソル位置をRefで管理（再レンダリング防止）
+  const mousePos = useRef({ x: 0, y: 0 })
+  const cursorPos = useRef({ x: 0, y: 0 })
 
   // モバイルデバイス検出
   useEffect(() => {
@@ -24,69 +28,58 @@ export function MouseFollower() {
     }
   }, [])
 
-  // 初期化時にカーソル位置を取得
+  // カーソル位置の追跡とアニメーション
   useEffect(() => {
-    // モバイルの場合はマウスフォロワーを無効化
     if (isMobile) return
 
-    // 初期表示時に現在のマウス位置を取得するハンドラー
-    const initialPosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
-      setIsVisible(true)
-      // 初期位置を取得したらこのイベントリスナーは削除
-      window.removeEventListener("mousemove", initialPosition)
-    }
-    
-    // 通常のマウス移動を追跡するハンドラー
-    const updatePosition = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY })
+    const moveCursor = (e: MouseEvent) => {
+      mousePos.current = { x: e.clientX, y: e.clientY }
+      if (!isVisible) setIsVisible(true)
     }
 
-    // mouseenterハンドラー
     const handleMouseEnter = () => setIsVisible(true)
-    
-    // mouseleaveハンドラー
     const handleMouseLeave = () => setIsVisible(false)
 
-    // イベントリスナーを追加
-    window.addEventListener("mousemove", initialPosition, { once: true })
-    window.addEventListener("mousemove", updatePosition)
-    window.addEventListener("mouseenter", handleMouseEnter)
-    window.addEventListener("mouseleave", handleMouseLeave)
+    window.addEventListener("mousemove", moveCursor)
+    document.addEventListener("mouseenter", handleMouseEnter)
+    document.addEventListener("mouseleave", handleMouseLeave)
 
-    // コンポーネントのマウント直後に表示状態を試行
-    const timeout = setTimeout(() => {
-      // マウスイベントがすでに発生していれば表示される
-    }, 100)
+    let rafId: number
+
+    const animate = () => {
+      // Lerp (Linear Interpolation) で滑らかに追従
+      const dx = mousePos.current.x - cursorPos.current.x
+      const dy = mousePos.current.y - cursorPos.current.y
+      
+      cursorPos.current.x += dx * 0.5
+      cursorPos.current.y += dy * 0.5
+
+      if (cursorRef.current) {
+        // translate3d でGPUアクセラレーションを有効化
+        cursorRef.current.style.transform = `translate3d(${cursorPos.current.x - 4}px, ${cursorPos.current.y - 4}px, 0)`
+        cursorRef.current.style.opacity = isVisible ? "0.7" : "0"
+      }
+      
+      rafId = requestAnimationFrame(animate)
+    }
+    
+    animate()
 
     return () => {
-      window.removeEventListener("mousemove", initialPosition)
-      window.removeEventListener("mousemove", updatePosition)
-      window.removeEventListener("mouseenter", handleMouseEnter)
-      window.removeEventListener("mouseleave", handleMouseLeave)
-      clearTimeout(timeout)
+      window.removeEventListener("mousemove", moveCursor)
+      document.removeEventListener("mouseenter", handleMouseEnter)
+      document.removeEventListener("mouseleave", handleMouseLeave)
+      cancelAnimationFrame(rafId)
     }
-  }, [isMobile])
+  }, [isMobile, isVisible])
 
-  // モバイルの場合は何も表示しない
-  if (isMobile) {
-    return null
-  }
+  if (isMobile) return null
 
   return (
     <div
-      className="fixed pointer-events-none z-50 rounded-full mix-blend-difference"
-      style={{
-        transform: `translate(${position.x}px, ${position.y}px)`,
-        opacity: isVisible ? 0.7 : 0,
-        width: "8px",
-        height: "8px",
-        backgroundColor: "white",
-        left: "-4px",
-        top: "-4px",
-        // トランジションを位置とopacityの両方に適用
-        transition: "opacity 200ms ease-out, transform 50ms linear"
-      }}
+      ref={cursorRef}
+      className="fixed pointer-events-none z-50 rounded-full mix-blend-difference bg-white w-2 h-2 top-0 left-0 will-change-transform"
     />
   )
 }
+
