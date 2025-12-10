@@ -19,9 +19,7 @@ export function SkillsSection() {
 
         {/* Full-width Tech Stack */}
         <div className="w-screen relative left-1/2 right-1/2 -mx-[50vw] mb-20">
-          <div className="max-w-[90vw] mx-auto">
-            <TechStack items={techStackItems} />
-          </div>
+          <TechStack items={techStackItems} />
         </div>
       </div>
     </section>

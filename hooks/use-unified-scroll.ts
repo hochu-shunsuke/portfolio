@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 
 interface UseUnifiedScrollProps {
   itemCount: number
@@ -27,7 +27,7 @@ export function useUnifiedScroll({
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeftState] = useState(0)
 
-  const checkArrows = () => {
+  const checkArrows = useCallback(() => {
     if (scrollRef.current) {
       const element = scrollRef.current
       const isAtStart = element.scrollLeft <= 5
@@ -44,13 +44,35 @@ export function useUnifiedScroll({
 
       onScroll?.()
     }
-  }
+  }, [itemCount, itemWidth, onScroll])
 
   useEffect(() => {
-    checkArrows()
+    const element = scrollRef.current
+    if (!element) return
+
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkArrows()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    // Add scroll listener to update arrows during native scroll
+    element.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener("resize", checkArrows)
-    return () => window.removeEventListener("resize", checkArrows)
-  }, [itemCount])
+    
+    // Initial check
+    checkArrows()
+
+    return () => {
+      element.removeEventListener('scroll', handleScroll)
+      window.removeEventListener("resize", checkArrows)
+    }
+  }, [checkArrows])
 
   // スクロールボタン用の関数
   const scrollLeftButton = () => {

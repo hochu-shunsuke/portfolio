@@ -51,8 +51,14 @@ export function MouseFollower() {
       const dx = mousePos.current.x - cursorPos.current.x
       const dy = mousePos.current.y - cursorPos.current.y
       
-      cursorPos.current.x += dx * 0.5
-      cursorPos.current.y += dy * 0.5
+      // 最適化: 動きが非常に小さい場合はDOM更新をスキップ
+      if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+        rafId = requestAnimationFrame(animate)
+        return
+      }
+
+      cursorPos.current.x += dx * 0.3
+      cursorPos.current.y += dy * 0.3
 
       if (cursorRef.current) {
         // translate3d でGPUアクセラレーションを有効化
