@@ -8,14 +8,17 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hochu-portfolio.vercel.app"),
   title: {
     default: "Hochu Portfolio",
     template: "%s | Hochu Shunsuke"
   },
   description: "Web Developer & AI Enthusiast based in Nagoya, Japan.",
-  keywords: ["Web Developer", "Next.js", "React", "Portfolio", "Hochu Shunsuke"],
   authors: [{ name: "Hochu Shunsuke" }],
   creator: "Hochu Shunsuke",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "ja_JP",

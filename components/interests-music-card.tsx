@@ -14,11 +14,11 @@ export function InterestsMusicCard({ spotifyUrl }: InterestsMusicCardProps) {
         src={spotifyUrl}
         width="100%" 
         height="450" 
-        frameBorder="0" 
         allowFullScreen={true}
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
         loading="lazy"
-        className="transition-all duration-300 group-hover:shadow-lg group-hover:shadow-zinc-900/20"
+        className="border-none transition-all duration-300 group-hover:shadow-lg group-hover:shadow-zinc-900/20"
       />
     </div>
   )
