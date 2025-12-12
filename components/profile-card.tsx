@@ -102,7 +102,7 @@ export function ProfileCard() {
               Web開発，イベントの企画運営，コンテンツ作成など広く取り組んでおります．
             </p>
             <p className="text-zinc-400 leading-relaxed">
-              現在は人材系ベンチャーのエンジニアとして求人サイトの開発を担当しています．
+              現在は人材系ベンチャーのエンジニアとして求人サービスの開発を進めています．
             </p>
             <p className="text-zinc-400 leading-relaxed">
               貧困国における通信インフラの改善に強く関心があります．
