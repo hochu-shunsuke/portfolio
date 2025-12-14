@@ -18,11 +18,11 @@ const SocialLinkButton = ({
     const buttonSize = isMobile ? "h-8 w-8" : "h-10 w-10"
 
     return (
-        <a href={link.href} target="_blank" rel="noopener noreferrer">
+        <a href={link.href} target="_blank" rel="noopener noreferrer" className="focus:outline-none">
             <Button
                 variant="ghost"
                 size="icon"
-                className={`${buttonSize} rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200`}
+                className={`${buttonSize} rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
             >
                 <IconComponent className={iconSize} />
                 <span className="sr-only">{link.name}</span>
@@ -36,7 +36,7 @@ function ProfileCard() {
     return (
         <div className="w-full max-w-3xl mx-auto bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-900/20">
             <div className="p-6 md:p-8">
-                {/* Mobile Layout - Original Design */}
+                {/* Mobile Layout */}
                 <div className="block md:hidden">
                     {/* Social Icons */}
                     <div className="flex space-x-3 mb-6 justify-center">
@@ -63,7 +63,7 @@ function ProfileCard() {
                     </div>
                 </div>
 
-                {/* Desktop Layout - New Design */}
+                {/* Desktop Layout */}
                 <div className="hidden md:block">
                     <div className="flex items-center justify-between mb-8">
                         {/* Left Side - Social Icons and Info */}
@@ -98,7 +98,7 @@ function ProfileCard() {
                 {/* Divider */}
                 <div className="h-px bg-zinc-800 my-6"></div>
 
-                {/* Mission Section - Centered */}
+                {/* Mission Section */}
                 <div className="text-center max-w-4xl mx-auto space-y-4">
                     <div className="space-y-3">
                         <p className="text-zinc-400 leading-relaxed">
@@ -145,6 +145,7 @@ export function Profile() {
                         <div className="h-px flex-1 md:block" />
                     </div>
                 </motion.div>
+
                 {/* Profile Card */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

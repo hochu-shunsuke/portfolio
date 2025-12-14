@@ -3,6 +3,7 @@
 import { ScrollableSection } from "@/components/ui/scrollable-section"
 import { musicPlaylists } from "@/lib/data"
 import { motion } from "framer-motion"
+import { useEffect, useRef, useState } from "react"
 
 interface InterestsMusicCardProps {
     spotifyUrl: string
@@ -10,21 +11,51 @@ interface InterestsMusicCardProps {
 
 // 音楽カードコンポーネント
 function InterestsMusicCard({ spotifyUrl }: InterestsMusicCardProps) {
+    const [isVisible, setIsVisible] = useState(false)
+    const iframeRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true)
+                        observer.disconnect()
+                    }
+                })
+            },
+            { rootMargin: "1000px" } // Load well before user reaches the section
+        )
+
+        if (iframeRef.current) {
+            observer.observe(iframeRef.current)
+        }
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
-        <div className="w-full h-[450px] transition-transform duration-300 hover:scale-[1.02] group">
-            <iframe
-                title="Spotify Playlist"
-                data-testid="embed-iframe"
-                style={{ borderRadius: '12px' }}
-                src={spotifyUrl}
-                width="100%"
-                height="450"
-                allowFullScreen={true}
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                loading="lazy"
-                className="border-none transition-all duration-300 group-hover:shadow-lg group-hover:shadow-zinc-900/20"
-            />
+        <div ref={iframeRef} className="w-full h-[450px] transition-transform duration-300 hover:scale-[1.02] group">
+            {isVisible ? (
+                <iframe
+                    title="Spotify Playlist"
+                    data-testid="embed-iframe"
+                    style={{ borderRadius: '12px' }}
+                    src={spotifyUrl}
+                    width="100%"
+                    height="450"
+                    allowFullScreen={true}
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    loading="lazy"
+                    tabIndex={-1}
+                    className="border-none transition-all duration-300 group-hover:shadow-lg group-hover:shadow-zinc-900/20"
+                />
+            ) : (
+                <div className="w-full h-full bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center">
+                    <div className="text-zinc-500">Loading...</div>
+                </div>
+            )}
         </div>
     )
 }

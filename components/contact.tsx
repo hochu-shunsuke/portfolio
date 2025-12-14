@@ -9,11 +9,11 @@ const SocialLinkButton = ({ link }: { link: typeof socialLinks[0] }) => {
     const IconComponent = link.icon
 
     return (
-        <a href={link.href} target="_blank" rel="noopener noreferrer">
+        <a href={link.href} target="_blank" rel="noopener noreferrer" className="focus:outline-none">
             <Button
                 variant="outline"
                 size="icon"
-                className="border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-zinc-900 transition-all"
+                className="border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-zinc-900 transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
                 <IconComponent className="h-4 w-4" />
                 <span className="sr-only">{link.name}</span>

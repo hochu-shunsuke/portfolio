@@ -28,7 +28,7 @@ function TechStack({ items }: TechStackProps) {
         dragProps
     } = useUnifiedScroll({
         itemCount: items.length,
-        itemWidth: 136, // デスクトップ: min-w-[120px] + gap 16px
+        itemWidth: 136,
         scrollAmount: 200,
         enableDrag: true
     })
