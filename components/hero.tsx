@@ -87,19 +87,33 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="#projects" onClick={(e) => handleNavClick(e, "#projects")} className="focus:outline-none">
-              <Button className="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all min-w-[160px] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                View Projects
-              </Button>
-            </a>
-            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="focus:outline-none">
-              <Button
-                variant="outline"
-                className="border-zinc-800 bg-white text-black hover:bg-zinc-200 hover:text-black transition-all min-w-[160px] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                Contact Me
-              </Button>
-            </a>
+            <Button
+              onClick={(e) => {
+                e.preventDefault()
+                const targetElement = document.getElementById('projects')
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' })
+                  window.history.pushState(null, '', '#projects')
+                }
+              }}
+              className="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all min-w-[160px] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              View Projects
+            </Button>
+            <Button
+              onClick={(e) => {
+                e.preventDefault()
+                const targetElement = document.getElementById('contact')
+                if (targetElement) {
+                  targetElement.scrollIntoView({ behavior: 'smooth' })
+                  window.history.pushState(null, '', '#contact')
+                }
+              }}
+              variant="outline"
+              className="border-zinc-800 bg-white text-black hover:bg-zinc-200 hover:text-black transition-all min-w-[160px] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              Contact Me
+            </Button>
           </motion.div>
         </motion.div>
       </div>

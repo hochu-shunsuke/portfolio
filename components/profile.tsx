@@ -18,16 +18,15 @@ const SocialLinkButton = ({
     const buttonSize = isMobile ? "h-8 w-8" : "h-10 w-10"
 
     return (
-        <a href={link.href} target="_blank" rel="noopener noreferrer" className="focus:outline-none">
-            <Button
-                variant="ghost"
-                size="icon"
-                className={`${buttonSize} rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
-            >
-                <IconComponent className={iconSize} />
-                <span className="sr-only">{link.name}</span>
-            </Button>
-        </a>
+        <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => window.open(link.href, '_blank', 'noopener,noreferrer')}
+            className={`${buttonSize} rounded-full bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+        >
+            <IconComponent className={iconSize} />
+            <span className="sr-only">{link.name}</span>
+        </Button>
     )
 }
 

@@ -41,6 +41,7 @@ function TechStack({ items }: TechStackProps) {
                 ref={scrollRef}
                 className={`overflow-x-auto py-6 scrollbar-hide ${isGrabbing ? 'select-none' : ''}`}
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                tabIndex={-1}
                 {...dragProps}
             >
                 <div className="flex gap-4 md:gap-6 px-4 md:px-6" style={{ width: 'max-content' }}>

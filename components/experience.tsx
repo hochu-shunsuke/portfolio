@@ -38,7 +38,12 @@ export function Experience() {
                                 }`}
                         >
                             {/* Timeline Dot */}
-                            <div className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[#0a0a0a] bg-zinc-800 md:left-1/2 md:-ml-5">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                aria-label={`${item.date} - ${item.title}`}
+                                className="absolute left-0 top-1 z-10 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[#0a0a0a] bg-zinc-800 md:left-1/2 md:-ml-5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-[#0a0a0a] cursor-pointer hover:bg-zinc-700 transition-colors"
+                            >
                                 <div className="h-2.5 w-2.5 rounded-full bg-white" />
                             </div>
 
