@@ -1,8 +1,6 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useState } from "react"
-import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 
@@ -79,7 +77,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-[700px] mx-auto text-zinc-400 md:text-xl mb-8"
           >
-            Web Developer, AI enthusiast
+            Web Developer, Experience Design
+
           </motion.p>
 
           <motion.div
@@ -90,7 +89,7 @@ export function Hero() {
           >
             <a href="#projects" onClick={(e) => handleNavClick(e, "#projects")}>
               <Button className="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white transition-all min-w-[160px]">
-                View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                View Projects
               </Button>
             </a>
             <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>

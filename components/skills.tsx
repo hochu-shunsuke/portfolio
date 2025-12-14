@@ -86,21 +86,6 @@ export function Skills() {
                         <div className="h-px flex-1 md:block" />
                     </div>
                 </motion.div>
-
-                {/* Tech Stack Heading */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="max-w-2xl mx-auto text-center mt-12 mb-12"
-                >
-                    <h3 className="text-xl font-bold mb-4">Tech Stack</h3>
-                    <p className="text-zinc-400">
-                        I work with modern technologies to create performant and scalable applications. My toolkit includes frontend
-                        frameworks, backend technologies, and design tools.
-                    </p>
-                </motion.div>
             </div>
 
             {/* Full-width Tech Stack */}

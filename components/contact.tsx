@@ -50,10 +50,10 @@ export function Contact() {
                 >
                     <div className="space-y-4">
                         <p className="text-zinc-400">
-                            I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+                            新しいプロジェクトやアイデア、一緒に何かできそうなことがあれば、お気軽にご連絡ください！
                         </p>
                         <small className="text-zinc-400">
-                            新しいプロジェクトやアイデア，一緒に何かできそうなことがあれば，お気軽にご連絡ください！
+                            If you have any new projects, ideas, or opportunities we might be able to collaborate on, feel free to reach out!
                         </small>
                         <div className="flex space-x-4">
                             {socialLinks.map((link) => (

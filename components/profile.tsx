@@ -48,7 +48,6 @@ function ProfileCard() {
                     {/* Name and Title */}
                     <div className="mb-6 text-center">
                         <h2 className="text-2xl font-bold mb-1">Hochu Shunsuke</h2>
-                        <p className="text-zinc-400">Web Developer, AI enthusiast</p>
                         <p className="text-zinc-400">Nagoya, Japan born in 2005</p>
                     </div>
 
@@ -79,7 +78,6 @@ function ProfileCard() {
                             {/* Name and Title */}
                             <div>
                                 <h2 className="text-3xl font-bold mb-2">Hochu Shunsuke</h2>
-                                <p className="text-lg text-zinc-400 mb-1">Web Developer, AI enthusiast</p>
                                 <p className="text-zinc-400">Nagoya, Japan born in 2005</p>
                             </div>
                         </div>
@@ -104,23 +102,21 @@ function ProfileCard() {
                 <div className="text-center max-w-4xl mx-auto space-y-4">
                     <div className="space-y-3">
                         <p className="text-zinc-400 leading-relaxed">
-                            Web開発，イベントの企画運営，コンテンツ作成など広く取り組んでおります．
+                            HR企業のエンジニアとして求人サービスの開発をしています。
                         </p>
                         <p className="text-zinc-400 leading-relaxed">
-                            現在はHR企業のエンジニアとして求人サービスの開発に取り組んでいます．
+                            Web開発、イベントの企画運営、コンテンツ制作など
                         </p>
                         <p className="text-zinc-400 leading-relaxed">
-                            貧困国における通信インフラの改善に強く関心があります．
+                            自身も楽しみながら、誰かの心に触れるプロダクトづくりを目指しています。
                         </p>
                     </div>
 
                     <div className="pt-4 border-t border-zinc-800">
                         <div className="space-y-3 text-sm">
                             <p className="text-zinc-400 leading-relaxed">
-                                貧困や紛争，情報格差のある環境で人々が生きるために必要な情報基盤を技術で支えたいと考えています．
-                            </p>
-                            <p className="text-zinc-400 leading-relaxed">
-                                自身でも楽しみながら，誰かの心に触れるようなプロダクトをつくりたいと考えています．
+                                貧困や紛争、情報格差のある環境で、情報基盤を技術で支えることを目標としています。<br />
+                                特に、貧困国における通信インフラの改善に強く関心を持っています。
                             </p>
                         </div>
                     </div>
