@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-export function HeroSection() {
+export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -94,4 +94,3 @@ export function HeroSection() {
     </section>
   )
 }
-

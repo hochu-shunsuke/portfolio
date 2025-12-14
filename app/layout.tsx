@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <SpeedInsights />
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <Providers>
           <AnimatedBackground />
           {children}
