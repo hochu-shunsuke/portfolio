@@ -139,3 +139,36 @@ export const musicPlaylists = [
     spotifyUrl: "https://open.spotify.com/embed/playlist/1eNiVtQ6RWz2XqDDOYmTyW?utm_source=generator&theme=0"
   }
 ]
+
+export const experiencesData = [
+  {
+    date: '2025.08',
+    title: 'Website Production',
+    description: 'Started freelance website production. Handling everything from design architecture and client hearings to implementation.',
+    type: 'Freelance',
+  },
+  {
+    date: '2025.04',
+    title: 'HR Tech Company Internship',
+    description: 'Engineer intern. Responsible for company website development and event design.',
+    type: 'Internship',
+  },
+  {
+    date: '2025.01',
+    title: 'AI Venture Internship',
+    description: 'Engineer intern. Involved in technology selection during the startup phase and Proof of Concept (PoC) development.',
+    type: 'Internship',
+  },
+  {
+    date: '2024.12',
+    title: 'SNS Development',
+    description: 'Developed an SNS using Django. Challenged with user authentication and scalability implementation.',
+    type: 'Personal Project',
+  },
+  {
+    date: '2024.11',
+    title: 'First Hackathon',
+    description: 'Participated in first hackathon. In charge of backend development including authentication.',
+    type: 'Hackathon',
+  },
+]

@@ -1,39 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const experiences = [
-    {
-        date: '2025.08',
-        title: 'Website Production',
-        description: 'Started freelance website production. Handling everything from design architecture and client hearings to implementation.',
-        type: 'Freelance',
-    },
-    {
-        date: '2025.04',
-        title: 'HR Tech Company Internship',
-        description: 'Engineer intern. Responsible for company website development and event design.',
-        type: 'Internship',
-    },
-    {
-        date: '2025.01',
-        title: 'AI Venture Internship',
-        description: 'Engineer intern. Involved in technology selection during the startup phase and Proof of Concept (PoC) development.',
-        type: 'Internship',
-    },
-    {
-        date: '2024.12',
-        title: 'SNS Development',
-        description: 'Developed an SNS using Django. Challenged with user authentication and scalability implementation.',
-        type: 'Personal Project',
-    },
-    {
-        date: '2024.11',
-        title: 'First Hackathon',
-        description: 'Participated in first hackathon. In charge of backend development including authentication.',
-        type: 'Hackathon',
-    },
-]
+import { experiencesData } from '@/lib/data'
 
 export function Experience() {
     return (
@@ -59,7 +27,7 @@ export function Experience() {
                     {/* Vertical Line */}
                     <div className="absolute left-[19px] top-0 h-full w-[2px] bg-zinc-800 md:left-1/2 md:-ml-[1px]" />
 
-                    {experiences.map((item, index) => (
+                    {experiencesData.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
