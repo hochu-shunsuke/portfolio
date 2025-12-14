@@ -1,6 +1,7 @@
 import { MouseFollower } from "@/components/mouse-follower"
 import { Hero } from "@/components/hero"
 import { Profile } from "@/components/profile"
+import { Experience } from "@/components/experience"
 import { Skills } from "@/components/skills"
 import { Projects } from "@/components/projects"
 import { Interests } from "@/components/interests"
@@ -13,6 +14,7 @@ export default function Home() {
       <MouseFollower />
       <Hero />
       <Profile />
+      <Experience />
       <Skills />
       <Projects />
       <Interests />

@@ -37,7 +37,7 @@ export const projectsData = [
   {
     title: "求人サービス開発",
     description: "HR企業の開発インターンにて，他部門と連携しメインエンジニアとして技術選定，設計，実装を担当．",
-    tags: ["better-auth", "Next.js", "supabase", "Vercel", "jwt"],
+    tags: ["better-auth", "Next.js", "supabase", "Vercel"],
     imageUrl: "/images/orcareer.png",
     link: ""
   },
@@ -57,21 +57,21 @@ export const projectsData = [
   },
   {
     title: "HPの製作代行",
-    description: "テック企業のHPの製作代行．",
+    description: "テック企業のHP製作代行．",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: "/images/HP-seisaku.png",
     link: ""
   },
   {
     title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力して完成．",
+    description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力し掲示板サイトを作成．",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png",
     link: ""
   },
   {
     title: "天気情報アプリ",
-    description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
+    description: "リアルタイム天気情報を提供するアプリ．モダンな技術スタックを用いての最初の個人開発．",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
     link: ""

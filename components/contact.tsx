@@ -1,5 +1,8 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { socialLinks } from "@/lib/data"
+import { motion } from "framer-motion"
 
 // ソーシャルリンクボタンコンポーネント（コンタクト用）
 const SocialLinkButton = ({ link }: { link: typeof socialLinks[0] }) => {
@@ -24,14 +27,27 @@ export function Contact() {
     return (
         <section id="contact" className="py-16 md:py-28">
             <div className="container px-4 md:px-6">
-                <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
-                        <p className="text-zinc-400">Get in touch for collaborations</p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+                        <div>
+                            <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
+                            <p className="text-zinc-400">Get in touch for collaborations</p>
+                        </div>
+                        <div className="h-px flex-1 md:block" />
                     </div>
-                    <div className="h-px flex-1 md:block" />
-                </div>
-                <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 mt-12">
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="grid gap-6 lg:grid-cols-2 lg:gap-12 mt-12"
+                >
                     <div className="space-y-4">
                         <p className="text-zinc-400">
                             I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
@@ -57,7 +73,7 @@ export function Contact() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

@@ -1,6 +1,9 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { socialLinks } from "@/lib/data"
+import { motion } from "framer-motion"
 
 // ソーシャルリンクボタンコンポーネント
 const SocialLinkButton = ({
@@ -132,18 +135,30 @@ export function Profile() {
     return (
         <section id="profile" className="py-16 md:py-28">
             <div className="container px-4 md:px-6">
-                <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight">Profile</h2>
-                        <p className="text-zinc-400">About me and my approach</p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+                        <div>
+                            <h2 className="text-3xl font-bold tracking-tight">Profile</h2>
+                            <p className="text-zinc-400">About me and my approach</p>
+                        </div>
+                        <div className="h-px flex-1 md:block" />
                     </div>
-                    <div className="h-px flex-1 md:block" />
-                </div>
-
+                </motion.div>
                 {/* Profile Card */}
-                <div className="mt-12 mb-8">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="mt-12 mb-8"
+                >
                     <ProfileCard />
-                </div>
+                </motion.div>
             </div>
         </section>
     )

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { ScrollableSection } from "@/components/ui/scrollable-section"
 import { projectsData } from "@/lib/data"
+import { motion } from "framer-motion"
 
 interface ProjectCardProps {
     title: string
@@ -66,13 +67,20 @@ export function Projects() {
     return (
         <section id="projects" className="py-16 md:py-28">
             <div className="container px-4 md:px-6">
-                <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
-                        <p className="text-zinc-400">Selected works and experiments</p>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+                        <div>
+                            <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
+                            <p className="text-zinc-400">Selected works and experiments</p>
+                        </div>
+                        <div className="h-px flex-1 md:block" />
                     </div>
-                    <div className="h-px flex-1 md:block" />
-                </div>
+                </motion.div>
 
                 <div className="mt-12 w-screen relative left-1/2 right-1/2 -mx-[50vw]">
                     <ScrollableSection
@@ -84,7 +92,14 @@ export function Projects() {
                     >
                         <div className="flex gap-4 md:gap-6 px-4 md:px-6 max-w-[1400px] mx-auto" style={{ width: 'max-content' }}>
                             {projectsData.map((project, index) => (
-                                <div key={index} className="w-[280px] md:w-[350px] flex-shrink-0">
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="w-[280px] md:w-[350px] flex-shrink-0"
+                                >
                                     <ProjectCard
                                         title={project.title}
                                         description={project.description}
@@ -92,12 +107,12 @@ export function Projects() {
                                         imageUrl={project.imageUrl}
                                         link={project.link}
                                     />
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </ScrollableSection>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
