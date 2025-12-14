@@ -1,22 +1,26 @@
 import { MouseFollower } from "@/components/mouse-follower"
-import { HeroSection } from "@/components/hero-section"
-import { ProfileSection } from "@/components/profile-section"
-import { SkillsSection } from "@/components/skills-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { InterestsSection } from "@/components/interests-section"
-import { ContactSection } from "@/components/contact-section"
+import { Hero } from "@/components/hero"
+import { Profile } from "@/components/profile"
+import { Experience } from "@/components/experience"
+import { Skills } from "@/components/skills"
+import { Projects } from "@/components/projects"
+import { Interests } from "@/components/interests"
+import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full  text-white overflow-hidden">
+    <div className="min-h-screen w-full text-white overflow-hidden">
       <MouseFollower />
-      <HeroSection />
-      <ProfileSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <InterestsSection />
-      <ContactSection />
+      <Hero />
+      <main>
+        <Profile />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Interests />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

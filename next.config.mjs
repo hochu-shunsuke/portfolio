@@ -25,11 +25,9 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  // クライアントサイドの機能を制限
   poweredByHeader: false,
   reactStrictMode: true,
   compiler: {
-    // 開発環境でもプロダクションビルドと同様の最適化を行う
     removeConsole: true,
   },
 }

@@ -44,20 +44,21 @@ export function ScrollableSection({
   return (
     <div className="relative">
       <ScrollButton direction="left" onClick={scrollLeft} show={showLeftArrow} />
-      
-      <div 
+
+      <div
         ref={scrollRef}
         className={`overflow-x-auto pb-6 scrollbar-hide ${isGrabbing ? 'select-none' : ''} ${className}`}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        tabIndex={-1}
         {...dragProps}
       >
         {children}
       </div>
-      
+
       <ScrollButton direction="right" onClick={scrollRight} show={showRightArrow} />
-      
+
       {showIndicator && (
-        <ScrollIndicator 
+        <ScrollIndicator
           itemCount={itemCount}
           currentIndex={currentIndex}
         />

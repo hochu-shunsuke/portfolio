@@ -14,12 +14,6 @@ export const socialLinks = [
     iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
   },
   {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hochu-shunsuke",
-    icon: Linkedin,
-    iconSize: { mobile: "h-4 w-4", desktop: "h-5 w-5" }
-  },
-  {
     name: "Email",
     href: "mailto:hochu.shunsuke.dev@gmail.com",
     icon: Mail,
@@ -36,72 +30,72 @@ export const socialLinks = [
 export const projectsData = [
   {
     title: "求人サービス開発",
-    description: "HR企業の開発インターンにて，他部門と連携しメインエンジニアとして技術選定，設計，実装を担当．",
-    tags: ["better-auth", "Next.js", "supabase", "Vercel", "jwt"],
+    description: "HR企業の開発インターンにて、他部門と連携しメインエンジニアとして技術選定、設計、実装を担当。",
+    tags: ["better-auth", "Next.js", "supabase", "Vercel"],
     imageUrl: "/images/orcareer.png",
     link: ""
   },
   {
     title: "ハッカソンイベントの企画運営",
-    description: "2025年インターン先で複数のハッカソンイベントを企画・運営．",
+    description: "2025年インターン先で複数のハッカソンイベントを企画・運営。",
     tags: ["企画・運営", "AI活用"],
     imageUrl: "/images/AI-hackathon.png",
-    link: "https://connpass.com/event/358377/"
+    link: ""
   },
   {
     title: "SalesforceデータからPDF自動生成",
-    description: "Salesforceデータから請求書を自動作成しGoogleDriveに保存するシステム．",
+    description: "Salesforceデータから請求書を自動作成しGoogleDriveに保存するシステム。",
     tags: ["GoogleAppsScript", "GoogleDrive", "Salesforce"],
     imageUrl: "/images/salesforce2pdf.png",
     link: ""
   },
   {
     title: "HPの製作代行",
-    description: "テック企業のHPの製作代行．",
+    description: "テック企業のHP製作代行。",
     tags: ["HTML", "CSS", "JavaScript"],
     imageUrl: "/images/HP-seisaku.png",
     link: ""
   },
   {
+    title: "Portfolio",
+    description: "コンポーネント化とデザインに徹底的にこだわり、常にアプデ中。",
+    tags: ["Next.js", "TypeScript", "Framer Motion"],
+    imageUrl: "/images/portfolio.png",
+    link: ""
+  },
+  {
     title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当．チームメイトと30日間協力して完成．",
+    description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力し掲示板サイトを作成。",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png",
     link: ""
   },
   {
     title: "天気情報アプリ",
-    description: "リアルタイム天気情報を提供するアプリ．モダンな開発の練習．",
+    description: "リアルタイム天気情報を提供するアプリ。モダンな技術スタックを用いての最初の個人開発。",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
     link: ""
   },
   {
-    title: "ネットワーク構築",
-    description: "CiscoPacketTracerを用いた実践的なネットワーク構築．ネスペの取得を目指す．",
-    tags: ["CiscoPacketTracer", "Cisco"],
-    imageUrl: "/images/network-studying.jpg",
-    link: ""
-  },
-  {
     title: "SNS開発",
-    description: "Twitter x 掲示板の多機能SNSアプリ．豊富なカスタマイズ性．スケーラビリティの強化中．",
+    description: "掲示板型の多機能SNSアプリ。初めての個人開発経験。",
     tags: ["Django", "Django Channels", "sqlite"],
     imageUrl: "/images/hochuitter.jpg",
     link: ""
   },
   {
     title: "課題リマインダー",
-    description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム．",
+    description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム。",
     tags: ["GoogleAppsScript", "GoogleTask", "SAML"],
     imageUrl: "/images/kadai-reminder.png",
     link: ""
   },
   {
-    title: "Portfolio",
-    description: "AIツールを使って短期間で効率的に実装．AI活用を強みとしている．",
-    tags: ["Next.js", "TypeScript", "vercel", "AI"],
-    imageUrl: "/images/hochu-portfolio.png",
+    title: "ネットワーク構築",
+    description: "CiscoPacketTracerを用いたネットワーク構築の遊び。ネスペの取得を目指している。",
+    tags: ["CiscoPacketTracer", "Cisco"],
+    imageUrl: "/images/network-studying.jpg",
     link: ""
   }
 ]
@@ -138,4 +132,37 @@ export const musicPlaylists = [
   {
     spotifyUrl: "https://open.spotify.com/embed/playlist/1eNiVtQ6RWz2XqDDOYmTyW?utm_source=generator&theme=0"
   }
+]
+
+export const experiencesData = [
+  {
+    date: '2025.06 - 2025.12',
+    title: '求人サービスの開発プロジェクト',
+    description: '求人サービスのメインエンジニアとして、技術選定、設計、実装を担当。',
+    type: 'Engineer',
+  },
+  {
+    date: '2025.04',
+    title: 'HR企業にてインターン開始',
+    description: '自社サイトの作成や、理系学生向けのイベント設計と運営。',
+    type: 'Internship',
+  },
+  {
+    date: '2025.01',
+    title: 'AIベンチャーにてインターン開始',
+    description: 'エンジニアとしての初のインターン。CTOとして立ち上げ期における技術選定に関与し、製品開発に取り組む。',
+    type: 'Internship',
+  },
+  {
+    date: '2024.12',
+    title: 'SNS開発',
+    description: '初の個人開発でDjangoを使用しローカル動作するSNSを開発。',
+    type: 'Solo Dev',
+  },
+  {
+    date: '2024.11',
+    title: 'HackU 2024',
+    description: '初のハッカソンでバックエンドを担当。チームメイトと30日間協力し掲示板サイトを作成。',
+    type: 'Hackathon',
+  },
 ]
