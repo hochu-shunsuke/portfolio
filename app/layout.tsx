@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: "Hochu Shunsuke - Portfolio",
     template: "%s | Hochu Shunsuke"
   },
-  description: "Experience Designに特化したWebデベロッパー。HR企業のエンジニアとして求人サービスの開発、イベントの企画運営、誰かの心に触れるプロダクトづくりに取り組んでいます。",
+  description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
   keywords: ["Web開発", "Webデザイン", "hochu", "Hochu", "Experience Design", "Next.js", "React", "TypeScript", "ポートフォリオ", "名古屋", "HRテック", "エンジニア"],
   authors: [{ name: "Hochu Shunsuke", url: "https://hochu-portfolio.vercel.app" }],
   creator: "Hochu Shunsuke",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: "https://hochu-portfolio.vercel.app",
     title: "Hochu Shunsuke - Portfolio",
-    description: "Experience Designに特化したWebデベロッパー。誰かの心に触れるプロダクトづくりを目指しています。",
+    description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
     siteName: "Hochu Shunsuke Portfolio",
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hochu Shunsuke - Portfolio",
-    description: "Experience Designに特化したWebデベロッパー。誰かの心に触れるプロダクトづくりを目指しています。",
+    description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
     images: ["/opengraph-image.png"],
   },
   robots: {
