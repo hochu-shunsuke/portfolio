@@ -134,6 +134,12 @@ export const musicPlaylists = [
   }
 ]
 
+export const travelLocations = [
+  {
+    googleMapUrl: "https://www.google.com/maps/d/u/1/embed?mid=1WORSASIfTnlwW7GwimIrKVmHwEoSgCA&ehbc=2E312F&noprof=1"
+  }
+]
+
 export const experiencesData = [
   {
     date: '2025.06 - 2025.12',

@@ -14,9 +14,8 @@ export function ScrollButton({ direction, onClick, show }: ScrollButtonProps) {
   return (
     <button
       onClick={onClick}
-      className={`absolute top-1/2 -translate-y-1/2 ${
-        direction === "left" ? "left-0 -translate-x-4" : "right-0 translate-x-4"
-      } z-10 bg-zinc-900/80 p-2 rounded-full shadow-md hover:bg-zinc-800 transition-all hidden md:flex items-center justify-center text-zinc-400 hover:text-white`}
+      className={`absolute top-1/2 -translate-y-1/2 ${direction === "left" ? "left-4 md:left-12" : "right-4 md:right-12"
+        } z-10 bg-zinc-900/80 p-2 rounded-full shadow-md hover:bg-zinc-800 transition-all hidden md:flex items-center justify-center text-zinc-400 hover:text-white`}
       aria-label={`Scroll ${direction}`}
     >
       {direction === "left" ? (

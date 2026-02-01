@@ -4,7 +4,7 @@ import { Profile } from "@/components/profile"
 import { Experience } from "@/components/experience"
 import { Skills } from "@/components/skills"
 import { Projects } from "@/components/projects"
-import { Interests } from "@/components/interests"
+import { Hobby } from "@/components/hobby"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
@@ -18,7 +18,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Projects />
-        <Interests />
+        <Hobby />
         <Contact />
       </main>
       <Footer />
