@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
     images: ["/opengraph-image.png"],
   },
+  verification: {
+    google: "YD90DkHZpe33JMbQZRIiMI8qE8xhTyFeR4rAy4RxQZU",
+  },
   robots: {
     index: true,
     follow: true,
