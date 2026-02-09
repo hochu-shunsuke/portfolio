@@ -151,16 +151,6 @@ export function Hobby() {
                             </motion.div>
                         ))}
                     </div>
-                    {/*
-                    以下中央寄せ
-                    */}
-                    <br />
-                    <br />
-                    <br />
-                    <div className="text-center">
-                        （旅ブログを連載できる程の長い旅をしたい。<br />
-                        航空券と数万円だけ持って、東南アジアの物価が安い国でRWをしながら生活してみたい。）
-                    </div>
                 </div>
 
                 {/* Music Section */}
