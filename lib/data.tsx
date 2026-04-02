@@ -58,28 +58,28 @@ export const projectsData = [
   },
   {
     title: "Portfolio",
-    description: "コンポーネント化とデザインに徹底的にこだわり、常にアプデ中。",
+    description: "コンポーネント化とデザインにこだわり、常にアプデ中。",
     tags: ["Next.js", "TypeScript", "Framer Motion"],
     imageUrl: "/images/portfolio.png",
     link: ""
   },
   {
     title: "HackU 2024",
-    description: "2024年人生初のハッカソンでバックエンドを担当。チームメイトと30日間協力し掲示板サイトを作成。",
+    description: "初のハッカソンでバックエンドを担当。メンバーと1ヶ月間協力しアンケートサイトを開発。",
     tags: ["Django", "sqlite"],
     imageUrl: "/images/hacku.png",
     link: ""
   },
   {
     title: "天気情報アプリ",
-    description: "リアルタイム天気情報を提供するアプリ。モダンな技術スタックを用いての最初の個人開発。",
+    description: "リアルタイム天気情報を提供するアプリ。",
     tags: ["Next.js", "OpenWeather API", "supabase", "Github Actions"],
     imageUrl: "/images/hochu-weather.png",
     link: ""
   },
   {
     title: "SNS開発",
-    description: "掲示板型の多機能SNSアプリ。初めての個人開発経験。",
+    description: "掲示板型の多機能SNSアプリ。",
     tags: ["Django", "Django Channels", "sqlite"],
     imageUrl: "/images/hochuitter.jpg",
     link: ""
@@ -89,13 +89,6 @@ export const projectsData = [
     description: "webclassとGoogleClassroomから自動で課題を取得しGoogle Taskに保存するシステム。",
     tags: ["GoogleAppsScript", "GoogleTask", "SAML"],
     imageUrl: "/images/kadai-reminder.png",
-    link: ""
-  },
-  {
-    title: "ネットワーク構築",
-    description: "CiscoPacketTracerを用いたネットワーク構築の遊び。ネスペの取得を目指している。",
-    tags: ["CiscoPacketTracer", "Cisco"],
-    imageUrl: "/images/network-studying.jpg",
     link: ""
   }
 ]
