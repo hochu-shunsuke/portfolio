@@ -93,12 +93,12 @@ export default function RootLayout({
             }),
           }}
         />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-TPCFZZ72Z5" strategy="afterInteractive" />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6DHZL59X6T" strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-TPCFZZ72Z5');
+          gtag('config', 'G-6DHZL59X6T');
         `}</Script>
         <SpeedInsights />
         <AnimatedBackground />
