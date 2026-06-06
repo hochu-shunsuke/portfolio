@@ -1,11 +1,12 @@
 import "./globals.css"
-import { Providers } from "./providers"
 import { AnimatedBackground } from "@/components/animated-background"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Noto_Sans_JP } from "next/font/google"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto", weight: ["400", "700"] })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hochu-portfolio.vercel.app"),
@@ -43,6 +44,13 @@ export const metadata: Metadata = {
     description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
     images: ["/opengraph-image.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   verification: {
     google: "YD90DkHZpe33JMbQZRIiMI8qE8xhTyFeR4rAy4RxQZU",
   },
@@ -66,21 +74,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <head>
-        {/* Preconnect to Spotify domains for better performance */}
-        <link rel="preconnect" href="https://encore.scdn.co" />
-        <link rel="preconnect" href="https://open.spotify.com" />
-        <link rel="preconnect" href="https://mosaic.scdn.co" />
-        <link rel="preconnect" href="https://embed-cdn.spotifycdn.com" />
-        <link rel="dns-prefetch" href="https://encore.scdn.co" />
-        <link rel="dns-prefetch" href="https://open.spotify.com" />
-      </head>
-      <SpeedInsights />
-      <body className={inter.className} suppressHydrationWarning>
-        <Providers>
-          <AnimatedBackground />
-          {children}
-        </Providers>
+      <body className={`${inter.variable} ${notoSansJP.variable} font-sans`} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Hochu Shunsuke",
+              url: "https://hochu-portfolio.vercel.app",
+              image: "https://github.com/hochu-shunsuke.png",
+              sameAs: [
+                "https://github.com/hochu-shunsuke",
+                "https://www.instagram.com/macho_hochu",
+              ],
+              jobTitle: "Web Engineer",
+              knowsAbout: ["Next.js", "TypeScript", "React", "Supabase", "Web開発", "UXデザイン"],
+            }),
+          }}
+        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-TPCFZZ72Z5" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TPCFZZ72Z5');
+        `}</Script>
+        <SpeedInsights />
+        <AnimatedBackground />
+        {children}
       </body>
     </html>
   )

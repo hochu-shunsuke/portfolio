@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Globe, Instagram } from "lucide-react"
+import { Github, Mail, Globe, Instagram } from "lucide-react"
 
 export const socialLinks = [
   {
@@ -104,33 +104,6 @@ export const techStackItems = [
   { name: "Go", logo: "/icons/go.svg" },
   { name: "Dify", logo: "/icons/dify.svg" },
   { name: "GAS", logo: "/icons/GAS.svg" },
-]
-
-export const musicPlaylists = [
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/6BLQf0A5yzSJVAI5Wo1ECC?utm_source=generator&theme=0"
-  },
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/4jjhdyoD1NymbcLZBMCVkE?utm_source=generator&theme=0"
-  },
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/34efqGQiIojggHIdWV13vv?utm_source=generator&theme=0"
-  },
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/0l073uFC6oBOIFoSI60gPK?utm_source=generator&theme=0"
-  },
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/6qeI7Fjsyrhet1ba8x3B0F?utm_source=generator&theme=0"
-  },
-  {
-    spotifyUrl: "https://open.spotify.com/embed/playlist/1eNiVtQ6RWz2XqDDOYmTyW?utm_source=generator&theme=0"
-  }
-]
-
-export const travelLocations = [
-  {
-    googleMapUrl: "https://www.google.com/maps/d/u/1/embed?mid=1WORSASIfTnlwW7GwimIrKVmHwEoSgCA&ehbc=2E312F&noprof=1"
-  }
 ]
 
 export const experiencesData = [
