@@ -23,7 +23,7 @@ export function Featured() {
               alt={project.title}
               fill
               sizes="(max-width: 768px) 100vw, 896px"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              className="object-contain"
             />
           </div>
           <div className="p-6 md:p-8">

@@ -24,6 +24,7 @@ export function Hero() {
         />
 
         <h1 className="text-4xl font-bold tracking-tight md:text-6xl">{profile.name}</h1>
+        <p className="mt-2 text-sm tracking-wide text-muted-foreground">{profile.nameEn}</p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
           {profile.role}
           <span className="mx-2 text-border">/</span>

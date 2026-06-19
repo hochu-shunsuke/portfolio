@@ -35,7 +35,7 @@ export const projectsData = [
     description:
       "世界がいま何を検索しているかをリアルタイムに可視化する個人開発の主軸プロジェクト。Googleトレンドとサジェストのデータを、無機質な表ではなく「世界の好奇心を覗く生きた地図」として表現（円の大きさ＝検索ボリューム、色＝新しさ、10分ごとに国別更新）。過剰にパーソナライズされたSNSや無味乾燥なデータ提示へのアンチテーゼとして、情報を多角的に見せ直す試み。日英西の多言語対応、GA4で分析し、地域ごとにX(Twitter)で広告動画を出稿して検証した。",
     tags: ["Next.js", "Google Trends", "GA4", "可視化", "多言語(日英西)", "X広告"],
-    imageUrl: "/images/in-progress.png", // TODO: earth-trend.com のスクショに差し替え
+    imageUrl: "/images/earth-trend.png",
     category: "marketing",
     featured: true,
     link: "https://earth-trend.com",
@@ -54,7 +54,7 @@ export const projectsData = [
     description:
       "個人運用のシミュレーションサイトにGA4を導入し、購入経路（コンバージョンパス）を分析。データドリブンに導線を改善。",
     tags: ["GA4", "Conversion Path", "個人開発"],
-    imageUrl: "/images/in-progress.png",
+    imageUrl: "/images/analytics.png",
     category: "marketing",
     link: "",
   },

@@ -9,13 +9,13 @@ type Project = (typeof projectsData)[number]
 function CardInner({ project, hasLink }: { project: Project; hasLink: boolean }) {
   return (
     <>
-      <div className="relative aspect-[3/2] overflow-hidden border-b border-border bg-muted">
+      <div className="relative aspect-video overflow-hidden border-b border-border bg-muted">
         <Image
           src={project.imageUrl}
           alt={project.title}
           fill
           sizes="(max-width: 640px) 100vw, 440px"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className="object-contain"
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
