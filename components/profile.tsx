@@ -101,13 +101,14 @@ function ProfileCard() {
                 <div className="text-center max-w-4xl mx-auto space-y-4">
                     <div className="space-y-3">
                         <p className="text-zinc-400 leading-relaxed">
-                            HR企業のエンジニアとして求人サービスの開発をしています。
+                            HR企業のエンジニアとして、AIを活用した求人サービスの開発をしています。
                         </p>
                         <p className="text-zinc-400 leading-relaxed">
-                            Web開発、イベントの企画運営、コンテンツ制作など
+                            「作る」だけでなく「伸ばす」ことにも関心があり、個人開発のサイトにアナリティクスを導入し、
+                            GA4で流入や購入経路を分析するのが趣味です。ビジネスコンテストにも挑戦してきました。
                         </p>
                         <p className="text-zinc-400 leading-relaxed">
-                            自身も楽しみながら、誰かの心に触れるプロダクトづくりを目指しています。
+                            プロダクトを技術で形にし、データで磨く。自身も楽しみながら、誰かの心に触れるものづくりを目指しています。
                         </p>
                     </div>
 
@@ -139,7 +140,6 @@ export function Profile() {
                     <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
                         <div>
                             <h2 className="text-3xl font-bold tracking-tight">Profile</h2>
-                            <p className="text-zinc-400">About me and my approach</p>
                         </div>
                         <div className="h-px flex-1 md:block" />
                     </div>

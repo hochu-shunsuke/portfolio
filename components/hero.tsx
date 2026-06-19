@@ -77,8 +77,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-[700px] mx-auto text-zinc-400 md:text-xl mb-8"
           >
-            Web Developer, Experience Design
-
+            AIでプロダクトをつくり、データで伸ばす。
           </motion.p>
 
           <motion.div

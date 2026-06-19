@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { ScrollableSection } from "@/components/ui/scrollable-section"
-import { projectsData } from "@/lib/data"
+import { projectsData, categoryMeta, type CategoryKey } from "@/lib/data"
 import { motion } from "framer-motion"
 
 interface ProjectCardProps {
@@ -14,11 +14,13 @@ interface ProjectCardProps {
     description: string
     tags: string[]
     imageUrl: string
+    category: CategoryKey
     link?: string
 }
 
 // プロジェクトカードコンポーネント
-function ProjectCard({ title, description, tags, imageUrl, link = "#" }: ProjectCardProps) {
+function ProjectCard({ title, description, tags, imageUrl, category, link = "#" }: ProjectCardProps) {
+    const meta = categoryMeta[category]
     return (
         <Card
             className="overflow-hidden bg-zinc-900 border-zinc-800 transition-all duration-300 hover:border-zinc-700 group w-full h-[450px] flex flex-col"
@@ -32,6 +34,12 @@ function ProjectCard({ title, description, tags, imageUrl, link = "#" }: Project
                     className="w-full h-auto object-contain"
                     sizes="(max-width: 768px) 280px, 350px"
                 />
+                {meta && (
+                    <span className={`absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-xs font-medium backdrop-blur-sm ${meta.badge}`}>
+                        <span className={`h-1.5 w-1.5 rounded-full ${meta.dot}`} />
+                        {meta.label}
+                    </span>
+                )}
             </div>
             <CardContent className="p-4 flex flex-col flex-grow">
                 <h3 className="text-lg font-bold text-white">{title}</h3>
@@ -76,7 +84,6 @@ export function Projects() {
                     <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
                         <div>
                             <h2 className="text-3xl font-bold tracking-tight">Projects</h2>
-                            <p className="text-zinc-400">Selected works and experiments</p>
                         </div>
                         <div className="h-px flex-1 md:block" />
                     </div>
@@ -105,6 +112,7 @@ export function Projects() {
                                         description={project.description}
                                         tags={project.tags}
                                         imageUrl={project.imageUrl}
+                                        category={project.category as CategoryKey}
                                         link={project.link}
                                     />
                                 </motion.div>

@@ -35,7 +35,6 @@ export function Contact() {
                     <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
                         <div>
                             <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
-                            <p className="text-zinc-400">Get in touch for collaborations</p>
                         </div>
                         <div className="h-px flex-1 md:block" />
                     </div>
@@ -51,9 +50,6 @@ export function Contact() {
                         <p className="text-zinc-400">
                             新しいプロジェクトやアイデア、一緒に何かできそうなことがあれば、お気軽にご連絡ください！
                         </p>
-                        <small className="text-zinc-400">
-                            If you have any new projects, ideas, or opportunities we might be able to collaborate on, feel free to reach out!
-                        </small>
                         <div className="flex space-x-4">
                             {socialLinks.map((link) => (
                                 <SocialLinkButton key={link.name} link={link} />
