@@ -26,3 +26,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# 私的な自己分析シート（別リポジトリで管理。公開事故防止）
+README.md
+README.html
