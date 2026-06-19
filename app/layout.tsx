@@ -1,5 +1,4 @@
 import "./globals.css"
-import { AnimatedBackground } from "@/components/animated-background"
 import type { Metadata } from "next"
 import { Inter, Noto_Sans_JP } from "next/font/google"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -14,8 +13,8 @@ export const metadata: Metadata = {
     default: "Hochu Shunsuke - Portfolio",
     template: "%s | Hochu Shunsuke"
   },
-  description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
-  keywords: ["Web開発", "Webデザイン", "hochu", "Hochu", "Experience Design", "Next.js", "React", "TypeScript", "ポートフォリオ", "名古屋", "HRテック", "エンジニア"],
+  description: "プロダクト志向のエンジニア。AIを道具に、0→1でプロダクトを形にします。寳中俊介のポートフォリオ。",
+  keywords: ["寳中俊介", "Hochu Shunsuke", "hochu", "ポートフォリオ", "プロダクト志向", "エンジニア", "Next.js", "React", "TypeScript", "Python", "AI", "名古屋", "Earth Trend"],
   authors: [{ name: "Hochu Shunsuke", url: "https://hochu-portfolio.vercel.app" }],
   creator: "Hochu Shunsuke",
   publisher: "Hochu Shunsuke",
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: "https://hochu-portfolio.vercel.app",
     title: "Hochu Shunsuke - Portfolio",
-    description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
+    description: "プロダクト志向のエンジニア。AIを道具に、0→1でプロダクトを形にします。",
     siteName: "Hochu Shunsuke Portfolio",
     images: [
       {
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Hochu Shunsuke - Portfolio",
-    description: "webエンジニアとして誰かの心に触れるプロダクトづくりを目指しています。",
+    description: "プロダクト志向のエンジニア。AIを道具に、0→1でプロダクトを形にします。",
     images: ["/opengraph-image.png"],
   },
   icons: {
@@ -101,7 +100,6 @@ export default function RootLayout({
           gtag('config', 'G-6DHZL59X6T');
         `}</Script>
         <SpeedInsights />
-        <AnimatedBackground />
         {children}
       </body>
     </html>

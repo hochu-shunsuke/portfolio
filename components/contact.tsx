@@ -1,75 +1,34 @@
-"use client"
+import { ArrowUpRight } from "lucide-react"
+import { Section } from "./section"
+import { Reveal } from "./reveal"
+import { SocialLinks } from "./social-links"
 
-import { Button } from "@/components/ui/button"
-import { socialLinks } from "@/lib/data"
-import { motion } from "framer-motion"
+const EMAIL = "hochu.shunsuke.dev@gmail.com"
 
-// ソーシャルリンクボタンコンポーネント（コンタクト用）
-const SocialLinkButton = ({ link }: { link: typeof socialLinks[0] }) => {
-    const IconComponent = link.icon
-
-    return (
-        <Button
-            variant="outline"
-            size="icon"
-            onClick={() => window.open(link.href, '_blank', 'noopener,noreferrer')}
-            className="border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 hover:bg-zinc-900 transition-all focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-            <IconComponent className="h-4 w-4" />
-            <span className="sr-only">{link.name}</span>
-        </Button>
-    )
-}
-
-// メインのコンタクトセクション
 export function Contact() {
-    return (
-        <section id="contact" className="py-16 md:py-28">
-            <div className="container px-4 md:px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                        <div>
-                            <h2 className="text-3xl font-bold tracking-tight">Contact</h2>
-                        </div>
-                        <div className="h-px flex-1 md:block" />
-                    </div>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="grid gap-6 lg:grid-cols-2 lg:gap-12 mt-12"
-                >
-                    <div className="space-y-4">
-                        <p className="text-zinc-400">
-                            新しいプロジェクトやアイデア、一緒に何かできそうなことがあれば、お気軽にご連絡ください！
-                        </p>
-                        <div className="flex space-x-4">
-                            {socialLinks.map((link) => (
-                                <SocialLinkButton key={link.name} link={link} />
-                            ))}
-                        </div>
-                    </div>
-                    <div className="space-y-4">
-                        <div className="grid gap-4">
-                            <div className="grid gap-2">
-                                <p className="text-sm font-medium text-zinc-400">Email</p>
-                                <p className="font-mono text-sm">hochu.shunsuke.dev@gmail.com</p>
-                            </div>
-                            <div className="grid gap-2">
-                                <p className="text-sm font-medium text-zinc-400">Location</p>
-                                <p className="font-mono text-sm">Nagoya, Japan</p>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-            </div>
-        </section>
-    )
+  return (
+    <Section id="contact" label="Contact">
+      <Reveal>
+        <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
+          お気軽にご連絡ください
+        </h2>
+        <p className="mt-4 max-w-lg text-base leading-relaxed text-muted-foreground">
+          新しいプロジェクトやアイデア、一緒に何かできそうなことがあれば、ぜひお話ししましょう。
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href={`mailto:${EMAIL}`}
+            className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            メールを送る
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
+          <SocialLinks />
+        </div>
+
+        <p className="mt-6 font-mono text-sm text-muted-foreground">{EMAIL}</p>
+      </Reveal>
+    </Section>
+  )
 }

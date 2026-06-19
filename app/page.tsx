@@ -1,26 +1,27 @@
-import { MouseFollower } from "@/components/mouse-follower"
+import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/hero"
-import { Profile } from "@/components/profile"
+import { About } from "@/components/about"
+import { Featured } from "@/components/featured"
+import { Projects } from "@/components/projects"
 import { Experience } from "@/components/experience"
 import { Skills } from "@/components/skills"
-import { Projects } from "@/components/projects"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-full text-white overflow-hidden">
-      <MouseFollower />
-      <Hero />
+    <>
+      <SiteHeader />
       <main>
-        <Profile />
+        <Hero />
+        <About />
+        <Featured />
+        <Projects />
         <Experience />
         <Skills />
-        <Projects />
         <Contact />
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
-
