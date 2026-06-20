@@ -17,13 +17,13 @@ export function Featured() {
           rel={project.link ? "noopener noreferrer" : undefined}
           className="group block overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/30"
         >
-          <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-muted">
+          <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-card">
             <Image
               src={project.imageUrl}
               alt={project.title}
               fill
               sizes="(max-width: 768px) 100vw, 896px"
-              className="object-contain"
+              className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>
           <div className="p-6 md:p-8">

@@ -16,7 +16,7 @@ export function SiteHeader() {
         <a href="#top" className="text-sm font-semibold tracking-tight">
           {profile.nameEn}
         </a>
-        <nav className="flex items-center gap-1">
+        <nav className="-mr-3 flex items-center gap-1">
           {navItems.map((item) => (
             <a
               key={item.href}
